@@ -1,0 +1,15 @@
+{
+    "name": "adrian/billet-simple",
+    "authors": [
+        {
+            "name": "adrian",
+            "email": "adrianstoj@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BilletSimple\\": "src/"
+        }
+    }
+}
