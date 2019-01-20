@@ -8,42 +8,20 @@
 
 namespace BilletSimple\Engine\Routing;
 
-
+use BilletSimple\Engine\Routing\RouteCollection;
 class Router
 {
-    private $url;
+    private $uri;
 
-    private $routes = [];
+    private $method;
 
-    public function __construct($url)
+    private $routes = array();
+
+    public function __construct($routes)
     {
-        $this->url = $url;
-    }
+        $this->uri = ($_SERVER['REQUEST_URI']);
+        $this->method = ($_SERVER['REQUEST_METHOD']);
 
-    public function get($path, $callable)
-    {
-        $route = new Route($path, $callable);
-        $this->routes[] = $route;
-    }
-
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    public function getRoutes()
-    {
-        return $this->routes;
-    }
-
-    public function run()
-    {
-        foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route)
-        {
-            if ($route->match($this->url))
-            {
-                $route->getCallable();
-            }
-        }
+        $this->routes = $routes;
     }
 }
