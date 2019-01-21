@@ -6,14 +6,23 @@ use BilletSimple\Engine\Routing\RouteCollection;
 
 require_once '../vendor/autoload.php';
 
-$routesCollection = array();
-$route = new Route('/', 'route_name', ['_controller' => 'Controller1']);
-$route2 = new Route('/foo', 'route_foo', ['_controller' => 'Controller2']);
-array_push($routesCollection, $route, $route2);
-$routes = new RouteCollection($routesCollection);
+$routes = new RouteCollection();
+$routes->add(
+    'homepage',
+    new Route('homepage',
+        '/',
+        ['_controller' => 'HomeController'],
+        'index'));
+$routes->add(
+    'error',
+    new Route('404',
+        '/.*',
+        ['_controller' => 'Controller1'],
+        'index'));
 $router = new Router($routes);
-var_dump($router);
-//$router->match(); // matcher la nouvelle route avec la collection
+
+$router->match();
+$router->call();
 
 
 

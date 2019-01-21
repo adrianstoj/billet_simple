@@ -17,10 +17,28 @@ class Route
 
     private $callable;
 
-    public function __construct($path, $name, $callable)
+    private $method;
+
+    public function __construct($name, $path, $callable, $method)
     {
         $this->path = $path;
         $this->name = $name;
         $this->callable = $callable;
+        $this->method = $method;
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function getCallable()
+    {
+        return $this->callable;
+    }
+
+    public function getMethod()
+    {
+        return $this->method;
     }
 }

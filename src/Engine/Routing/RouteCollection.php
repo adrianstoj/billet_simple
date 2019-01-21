@@ -13,9 +13,9 @@ class RouteCollection
 {
     private $routes = array();
 
-    public function __construct($routes)
+    public function add($name, $item)
     {
-        $this->routes = $routes;
+        $this->routes[$name] = $item;
     }
 
     public function getAll()

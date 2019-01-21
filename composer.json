@@ -6,10 +6,15 @@
             "email": "adrianstoj@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/debug": "^4.2"
+    },
     "autoload": {
         "psr-4": {
             "BilletSimple\\": "src/"
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.2"
     }
 }

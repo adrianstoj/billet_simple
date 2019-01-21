@@ -9,19 +9,46 @@
 namespace BilletSimple\Engine\Routing;
 
 use BilletSimple\Engine\Routing\RouteCollection;
+use BilletSimple\Engine\Routing\Route;
 class Router
 {
     private $uri;
 
     private $method;
 
-    private $routes = array();
+    private $callable;
 
-    public function __construct($routes)
+    private $collection;
+
+    private $action;
+
+    public function __construct($collection)
     {
         $this->uri = ($_SERVER['REQUEST_URI']);
         $this->method = ($_SERVER['REQUEST_METHOD']);
 
-        $this->routes = $routes;
+        $this->collection = $collection;
     }
+
+    public function match()
+    {
+        foreach ($this->collection->getAll() as $route)
+        {
+            $url = $route->getPath();
+            if ($url == $this->uri)
+            {
+                $this->method = $route->getMethod();
+                $this->callable = $route->getCallable();
+            }
+        }
+    }
+
+    public function call()
+    {
+        $controller =  "BilletSimple\\Controller\\" . $this->callable["_controller"];
+        $controller = new $controller();
+        $action = $this->method;
+        $controller->$action();
+    }
+
 }
