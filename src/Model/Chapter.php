@@ -6,9 +6,11 @@
  * Time: 12:44
  */
 
-namespace BilletSimple;
+namespace BilletSimple\Model;
 
-class Chapter
+use BilletSimple\Engine\Model;
+
+class Chapter extends Model
 {
     private $id;
 

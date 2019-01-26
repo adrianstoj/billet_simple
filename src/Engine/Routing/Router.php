@@ -8,8 +8,6 @@
 
 namespace BilletSimple\Engine\Routing;
 
-use BilletSimple\Engine\Routing\RouteCollection;
-use BilletSimple\Engine\Routing\Route;
 class Router
 {
     private $uri;

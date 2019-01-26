@@ -10,15 +10,8 @@ namespace BilletSimple\Engine;
 
 abstract class Controller
 {
-    // génère l'url en fonction de la collection? à voir
-    public function generateUrl()
+    public function render($fileName, $data = [])
     {
-
-    }
-
-    // renvoie l'utilisateur sur l'url
-    public function redirect($url)
-    {
-
+        require $fileName;
     }
 }

@@ -1,6 +1,4 @@
-<?php
-require 'layout.php'
-    ?>
+<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php' ?>
 
 <div id="home_image"></div>
 <h1>BILLET SIMPLE POUR L'ALASKA</h1>

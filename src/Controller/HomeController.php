@@ -9,10 +9,15 @@
 namespace BilletSimple\Controller;
 
 
-class HomeController
+use BilletSimple\Model\Chapter;
+use BilletSimple\Engine\Controller;
+
+class HomeController extends Controller
 {
     public function index()
     {
-        dump('homepage');
+        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/homepage.php', []);
+        $chapter = new Chapter();
+        var_dump($chapter);
     }
 }
