@@ -17,7 +17,5 @@ class HomeController extends Controller
     public function index()
     {
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/homepage.php', []);
-        $chapter = new Chapter();
-        var_dump($chapter);
     }
 }

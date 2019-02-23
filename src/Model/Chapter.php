@@ -8,9 +8,10 @@
 
 namespace BilletSimple\Model;
 
-use BilletSimple\Engine\Model;
+use BilletSimple\Engine\Entity;
+use BilletSimple\Engine\PDO;
 
-class Chapter extends Model
+class Chapter
 {
     private $id;
 

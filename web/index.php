@@ -13,15 +13,13 @@ $routes->add(
         '/',
         ['_controller' => 'HomeController'],
         'index'));
-//$routes->add(
-//    'error',
-//    new Route('404',
-//        '/.*',
-//        ['_controller' => 'Controller1'],
-//        'index'));
+$routes->add(
+    'table',
+    new Route('table',
+        '/table',
+        ['_controller' => 'TableController'],
+        'index'));
 $router = new Router($routes);
 
 $router->match();
 $router->call();
-
-//require '../src/View/homepage.php';

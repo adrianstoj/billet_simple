@@ -13,5 +13,6 @@ abstract class Controller
     public function render($fileName, $data = [])
     {
         require $fileName;
+        return $data;
     }
 }
