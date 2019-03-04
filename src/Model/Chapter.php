@@ -79,4 +79,14 @@ class Chapter
         $this->id = $date;
         return $this->date;
     }
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    public function setComments($comments)
+    {
+        $this->comments = $comments;
+    }
 }

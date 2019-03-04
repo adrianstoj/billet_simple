@@ -13,15 +13,19 @@ class Route
 {
     private $path;
 
+    private $param;
+
     private $name;
 
     private $callable;
 
     private $method;
 
-    public function __construct($name, $path, $callable, $method)
+
+    public function __construct($name, $path, $param, $callable, $method)
     {
         $this->path = $path;
+        $this->param = $param;
         $this->name = $name;
         $this->callable = $callable;
         $this->method = $method;
@@ -40,5 +44,10 @@ class Route
     public function getMethod()
     {
         return $this->method;
+    }
+
+    public function getParam()
+    {
+        return $this->param;
     }
 }

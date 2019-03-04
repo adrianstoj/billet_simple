@@ -18,8 +18,6 @@ class ChapterManager
 
     private $pdoStatement;
 
-    private $data;
-
     public function __construct()
     {
         $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
@@ -33,11 +31,10 @@ class ChapterManager
     public function read($id)
     {
         $this->pdoStatement = $this->pdo->prepare('SELECT * FROM Chapter WHERE id = :id');
-
         $this->pdoStatement->bindValue(':id', $id, PDO::PARAM_INT);
-        $test = $this->pdoStatement->execute();
+        $request = $this->pdoStatement->execute();
 
-        if ($test) {
+        if ($request) {
             $chapter = $this->pdoStatement->fetchObject('BilletSimple\Model\Chapter');
 
             if ($chapter == false) {
@@ -55,6 +52,20 @@ class ChapterManager
     public function readAll()
     {
         $this->pdoStatement = $this->pdo->query('SELECT * FROM Chapter');
+
+        $chapters = [];
+
+        while ($chapter = $this->pdoStatement->fetchObject('BilletSimple\Model\Chapter'))
+        {
+            $chapters[] = $chapter;
+        }
+
+        return $chapters;
+    }
+
+    public function readLast()
+    {
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM Chapter ORDER BY date LIMIT 3');
 
         $chapters = [];
 

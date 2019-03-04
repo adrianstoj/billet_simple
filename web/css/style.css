@@ -142,18 +142,15 @@ h2
 {
     position: absolute;
     top: 35%;
-    left: 32%;
+    left: 43%;
     color: #ffffff;
     font-size: 50px;
 }
 
 h3
 {
-    position: absolute;
-    top: 40%;
-    left: 35%;
-    color: #ffffff;
-    font-size: 50px;
+    font-size: 30px;
+    text-align: center;
 }
 
 

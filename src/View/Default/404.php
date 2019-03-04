@@ -2,10 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: adrian
- * Date: 26/01/19
- * Time: 12:14
+ * Date: 24/02/19
+ * Time: 10:52
  */
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 ?>
 <div id="home_image"></div>
-<h2>CONTACT</h2>
+<h2>404</h2>

@@ -17,13 +17,13 @@
         <nav id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav-home" href="#page-top"><i class="fas fa-home"></i>Accueil</a>
+                    <a class="js-scroll-trigger" id="fix-nav-home" href="/"><i class="fas fa-home"></i>Accueil</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav" href="#about"><i class="fas fa-book"></i>Table</a>
+                    <a class="js-scroll-trigger" id="fix-nav" href="/table"><i class="fas fa-book"></i>Table</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav-second" href="#services"><i class="fas fa-envelope"></i>Contact</a>
+                    <a class="js-scroll-trigger" id="fix-nav-second" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
                 </li>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" id="fix-nav-third" href="#services"><i class="fas fa-user"></i>Connexion</a>

@@ -16,6 +16,8 @@ class Comment
 
     private $content;
 
+    private $chapter_id;
+
     private $reportings;
 
     public function getId()
@@ -49,5 +51,15 @@ class Comment
     {
         $this->id = $content;
         return $this->content;
+    }
+
+    public function getChapterId()
+    {
+        return $this->chapter_id;
+    }
+
+    public function setChapterId($chapter_id)
+    {
+        $this->chapter_id = $chapter_id;
     }
 }

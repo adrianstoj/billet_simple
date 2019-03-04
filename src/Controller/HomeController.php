@@ -9,6 +9,7 @@
 namespace BilletSimple\Controller;
 
 
+use BilletSimple\Engine\Manager\ChapterManager;
 use BilletSimple\Model\Chapter;
 use BilletSimple\Engine\Controller;
 
@@ -16,6 +17,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/homepage.php', []);
+        $manager = new ChapterManager();
+        $chapters = $manager->readLast();
+
+        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/homepage.php', [
+            $chapters
+        ]);
     }
 }

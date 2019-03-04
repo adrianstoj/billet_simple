@@ -12,8 +12,8 @@
 <h4><a href="table">ACCEDER AUX CHAPITRES</a></h4>
 
 <h4>DERNIERS CHAPITRES</h4>
-<ul>
-    <li>Chapitre X</li>
-    <li>Chapitre Y</li>
-    <li>Chapitre Z</li>
-</ul>
+<?php
+foreach ($data[0] as $chapter) {
+    echo ('<a href="'. $chapter->getSlug(). '"><li>'. $chapter->getTitle(). '</li></a>');
+}
+?>

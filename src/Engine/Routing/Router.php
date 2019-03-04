@@ -33,8 +33,15 @@ class Router
         foreach ($this->collection->getAll() as $route)
         {
             $url = $route->getPath();
-            if ($url == $this->uri)
-            {
+            $pattern = "#^$url|i$#";
+            $contentParam = null;
+            if ($route->getParam() != null) {
+                $contentParam = $route->getParam();
+            }
+            $pattern = str_replace('|i', $contentParam, $pattern);
+//            dump($pattern);
+
+            if (preg_match($pattern, $this->uri)) {
                 $this->method = $route->getMethod();
                 $this->callable = $route->getCallable();
             }

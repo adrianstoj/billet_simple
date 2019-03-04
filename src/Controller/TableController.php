@@ -9,20 +9,17 @@
 namespace BilletSimple\Controller;
 
 
-use BilletSimple\Engine\Manager\ChapterManager;
-use BilletSimple\Model\Chapter;
 use BilletSimple\Engine\Controller;
+use BilletSimple\Engine\Manager\ChapterManager;
 
 class TableController extends Controller
 {
     public function index()
     {
-        $chapter = new Chapter();
         $manager = new ChapterManager();
         $chapters = $manager->readAll();
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/table.php', [
-            $chapters,
-            'test'
+            $chapters
         ]);
     }
 }
