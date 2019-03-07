@@ -12,9 +12,7 @@ class Reporting
 {
     private $id;
 
-    private $name;
-
-    private $content;
+    private $comment_id;
 
     public function getId()
     {
@@ -24,28 +22,15 @@ class Reporting
     public function setId($id)
     {
         $this->id = $id;
-        return $this->id;
     }
 
-    public function getName()
+    public function getCommentId()
     {
-        return $this->name;
+        return $this->comment_id;
     }
 
-    public function setName($name)
+    public function setCommentId($comment_id)
     {
-        $this->id = $name;
-        return $this->name;
-    }
-
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    public function setContent($content)
-    {
-        $this->id = $content;
-        return $this->content;
+        $this->comment_id = $comment_id;
     }
 }

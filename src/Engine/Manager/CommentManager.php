@@ -13,9 +13,9 @@ use BilletSimple\Model\Comment;
 
 class CommentManager
 {
-    protected $pdo;
+    private $pdo;
 
-    protected $pdoStatement;
+    private $pdoStatement;
 
     public function __construct()
     {
@@ -24,9 +24,11 @@ class CommentManager
 
     public function create(Comment $comment)
     {
-        $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments VALUES (:title, :content, :chapter_id)');
+        $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments (id, author, title, content, comment_date, chapter_id) VALUES (NULL, :author, :title, :content, :comment_date, :chapter_id)');
+        $this->pdoStatement->bindValue(':author', $comment->getAuthor(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':title', $comment->getTitle(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':comment_date', $comment->getCommentDate(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':chapter_id', $comment->getChapterId(), PDO::PARAM_INT);
         $this->pdoStatement->execute();
     }

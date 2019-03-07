@@ -8,6 +8,8 @@ use BilletSimple\Engine\Routing\TestRouting;
 require_once '../vendor/autoload.php';
 
 $routes = new RouteCollection();
+
+// GET
 $routes->add(
     '404',
     new Route('404',
@@ -48,7 +50,42 @@ $routes->add(
         '',
         ['_controller' => 'HomeController'],
         'index'));
-// Add comment
+$routes->add(
+    'admin',
+    new Route('admin',
+        '/admin',
+        'GET',
+        '',
+        ['_controller' => 'AdminController'],
+        'index'));
+$routes->add(
+    'connection',
+    new Route('connection',
+        '/connexion',
+        'GET',
+        '',
+        ['_controller' => 'UserController'],
+        'connection'));
+
+// POST
+$routes->add(
+    'addComment',
+    new Route('addComment',
+        '/ajoutCommentaire/chapitre-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'ChapterController'],
+        'addComment'));
+$routes->add(
+    'reportComment',
+    new Route('reportComment',
+        '/signalement/commentaire-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'ChapterController'],
+        'reportComment'));
+
+
 $router = new Router($routes);
 
 $router->match();

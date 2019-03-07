@@ -12,7 +12,7 @@ class User
 {
     private $id;
 
-    private $username;
+    private $pseudo;
 
     private $password;
 
@@ -26,18 +26,16 @@ class User
     public function setId($id)
     {
         $this->id = $id;
-        return $this->id;
     }
 
-    public function getUsername()
+    public function getPseudo()
     {
-        return $this->name;
+        return $this->pseudo;
     }
 
-    public function setUsername($name)
+    public function setPseudo($pseudo)
     {
-        $this->id = $name;
-        return $this->name;
+        $this->pseudo = $pseudo;
     }
 
     public function getPassword()
@@ -48,7 +46,6 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
-        return $this->password;
     }
 
     public function getRole()
@@ -59,6 +56,5 @@ class User
     public function setRole($role)
     {
         $this->role = $role;
-        return $this->role;
     }
 }

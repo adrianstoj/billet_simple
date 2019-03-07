@@ -22,7 +22,6 @@ class Comment
 
     private $chapter_id;
 
-
     public function getId()
     {
         return $this->id;
@@ -31,7 +30,6 @@ class Comment
     public function setId($id)
     {
         $this->id = $id;
-        return $this->id;
     }
 
     public function getAuthor()
@@ -51,8 +49,7 @@ class Comment
 
     public function setTitle($title)
     {
-        $this->id = $title;
-        return $this->title;
+        $this->title = $title;
     }
 
     public function getContent()
@@ -62,8 +59,7 @@ class Comment
 
     public function setContent($content)
     {
-        $this->id = $content;
-        return $this->content;
+        $this->content = $content;
     }
 
     public function getCommentDate()

@@ -31,7 +31,6 @@ class Chapter
     public function setId($id)
     {
         $this->id = $id;
-        return $this->id;
     }
 
     public function getTitle()
@@ -41,8 +40,7 @@ class Chapter
 
     public function setTitle($title)
     {
-        $this->id = $title;
-        return $this->title;
+        $this->title = $title;
     }
 
     public function getContent()
@@ -52,8 +50,7 @@ class Chapter
 
     public function setContent($content)
     {
-        $this->id = $content;
-        return $this->content;
+        $this->content = $content;
     }
 
     public function getSlug()
@@ -63,8 +60,7 @@ class Chapter
 
     public function setSlug($slug)
     {
-        $this->id = $slug;
-        return $this->slug;
+        $this->slug = $slug;
     }
 
     public function getDate()
@@ -74,7 +70,8 @@ class Chapter
 
     public function setDate($date)
     {
-        $this->id = $date;
-        return $this->date;
+        $this->date = $date;
     }
+
+
 }

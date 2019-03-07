@@ -26,7 +26,10 @@
                     <a class="js-scroll-trigger" id="fix-nav-second" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
                 </li>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav-third" href="#services"><i class="fas fa-user"></i>Connexion</a>
+                    <a class="js-scroll-trigger" id="fix-nav-third" href="/connexion"><i class="fas fa-user"></i>Connexion</a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" id="fix-nav-third" href="/admin"><i class="fas fa-user"></i>Administration</a>
                 </li>
             </ul>
         </nav>

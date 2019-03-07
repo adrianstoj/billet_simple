@@ -12,22 +12,31 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 <p><?php echo $data[1]; ?></p>
 
 <h3>COMMENTAIRES</h3>
-<ul>
+<ul id="commentsList">
     <?php
     foreach ($data[2] as $comment) {
-        echo ('<li>'. $comment->getTitle(). $comment->getContent(). '</li>');
+        $commentDate = $comment->getCommentDate();
+        $commentId = $comment->getId();
+        $chapterId = $comment->getChapterId();
+        $date = explode(' ', $commentDate);
+        echo ('<li><b>'. $comment->getAuthor(). '</b> le '. $date[0]. ' à '. $date[1]. '</br>'. $comment->getContent(). '<form action="/signalement/commentaire-'. $commentId. '" method="post">
+    <button class="btn btn-danger" type="submit" name="report" value="'. $commentId. ' '. $chapterId. '">Signaler</button>
+</form>'. '</li></br>');
     }
     ?>
 </ul>
-<form action="" method="post">
+<form action="/ajoutCommentaire/chapitre-<?php echo $data[0]; ?>" method="post">
     <div class="form-group">
-        <label for="exampleInputEmail1">Pseudo</label>
-        <input type="text" class="form-control" id="formName" placeholder="Votre pseudo">
+        <label for="pseudo">Pseudo</label>
+        <input type="text" class="form-control" id="formName" placeholder="Votre pseudo" name="author">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlTextarea1">Commentaire</label>
-        <textarea class="form-control" id="formComment" rows="3" placeholder="Votre commentaire"></textarea>
+        <label for="title">Titre</label>
+        <input type="text" class="form-control" id="forTitle" placeholder="Titre (optionnel)" name="title">
+    </div>
+    <div class="form-group">
+        <label for="content">Commentaire</label>
+        <textarea class="form-control" id="formComment" rows="3" placeholder="Votre commentaire" name="content"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
-
 </form>
