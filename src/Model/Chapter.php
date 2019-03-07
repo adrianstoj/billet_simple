@@ -23,8 +23,6 @@ class Chapter
 
     private $date;
 
-    private $comments;
-
     public function getId()
     {
         return $this->id;
@@ -78,15 +76,5 @@ class Chapter
     {
         $this->id = $date;
         return $this->date;
-    }
-
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
     }
 }

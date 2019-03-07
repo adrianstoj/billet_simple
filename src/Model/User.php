@@ -6,7 +6,7 @@
  * Time: 19:28
  */
 
-namespace BilletSimple;
+namespace BilletSimple\Model;
 
 class User
 {

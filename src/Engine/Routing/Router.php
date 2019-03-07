@@ -30,6 +30,7 @@ class Router
 
     public function match()
     {
+
         foreach ($this->collection->getAll() as $route)
         {
             $url = $route->getPath();
@@ -39,10 +40,9 @@ class Router
                 $contentParam = $route->getParam();
             }
             $pattern = str_replace('|i', $contentParam, $pattern);
-//            dump($pattern);
 
-            if (preg_match($pattern, $this->uri)) {
-                $this->method = $route->getMethod();
+            if (preg_match($pattern, $this->uri) && $route->getMethod() == $this->method) {
+                $this->action = $route->getAction();
                 $this->callable = $route->getCallable();
             }
         }
@@ -52,7 +52,7 @@ class Router
     {
         $controller =  "BilletSimple\\Controller\\" . $this->callable["_controller"];
         $controller = new $controller();
-        $action = $this->method;
+        $action = $this->action;
         $controller->$action();
     }
 

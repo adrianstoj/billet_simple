@@ -30,7 +30,7 @@ class ChapterManager
 
     public function read($id)
     {
-        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM Chapter WHERE id = :id');
+        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM chapters WHERE id = :id');
         $this->pdoStatement->bindValue(':id', $id, PDO::PARAM_INT);
         $request = $this->pdoStatement->execute();
 
@@ -51,7 +51,7 @@ class ChapterManager
 
     public function readAll()
     {
-        $this->pdoStatement = $this->pdo->query('SELECT * FROM Chapter');
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM chapters');
 
         $chapters = [];
 
@@ -65,7 +65,7 @@ class ChapterManager
 
     public function readLast()
     {
-        $this->pdoStatement = $this->pdo->query('SELECT * FROM Chapter ORDER BY date LIMIT 3');
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM chapters ORDER BY date LIMIT 3');
 
         $chapters = [];
 

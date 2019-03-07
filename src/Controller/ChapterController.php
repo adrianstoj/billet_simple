@@ -12,6 +12,7 @@ namespace BilletSimple\Controller;
 use BilletSimple\Engine\Controller;
 use BilletSimple\Engine\Manager\ChapterManager;
 use BilletSimple\Engine\Manager\CommentManager;
+use BilletSimple\Model\Comment;
 
 class ChapterController extends Controller
 {
@@ -26,12 +27,19 @@ class ChapterController extends Controller
 
         $commentManager = new CommentManager();
         $comments = $commentManager->readAllBy($chapterId);
-
-        dump($comments);
+//        $addComment = $commentManager->create(new Comment());
+//        dump($addComment);
 
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/chapter.php', [
             $chapterId,
-            $chapterContent
+            $chapterContent,
+            $comments
         ]);
+    }
+
+    public function addComment($chapterId, $author, $content)
+    {
+        $commentManager = new CommentManager();
+
     }
 }

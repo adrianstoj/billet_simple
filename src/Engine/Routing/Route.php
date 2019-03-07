@@ -11,24 +11,27 @@ namespace BilletSimple\Engine\Routing;
 
 class Route
 {
-    private $path;
-
-    private $param;
-
     private $name;
 
-    private $callable;
+    private $path;
 
     private $method;
 
+    private $param;
 
-    public function __construct($name, $path, $param, $callable, $method)
+    private $callable;
+
+    private $action;
+
+
+    public function __construct($name, $path, $method, $param, $callable, $action)
     {
-        $this->path = $path;
-        $this->param = $param;
         $this->name = $name;
-        $this->callable = $callable;
+        $this->path = $path;
         $this->method = $method;
+        $this->param = $param;
+        $this->callable = $callable;
+        $this->action = $action;
     }
 
     public function getPath()
@@ -36,14 +39,19 @@ class Route
         return $this->path;
     }
 
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
     public function getCallable()
     {
         return $this->callable;
     }
 
-    public function getMethod()
+    public function getAction()
     {
-        return $this->method;
+        return $this->action;
     }
 
     public function getParam()

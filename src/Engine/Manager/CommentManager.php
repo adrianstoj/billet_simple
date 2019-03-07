@@ -13,9 +13,9 @@ use BilletSimple\Model\Comment;
 
 class CommentManager
 {
-    private $pdo;
+    protected $pdo;
 
-    private $pdoStatement;
+    protected $pdoStatement;
 
     public function __construct()
     {
@@ -24,19 +24,22 @@ class CommentManager
 
     public function create(Comment $comment)
     {
-
+        $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments VALUES (:title, :content, :chapter_id)');
+        $this->pdoStatement->bindValue(':title', $comment->getTitle(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':chapter_id', $comment->getChapterId(), PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 
     public function readAllBy($chapterId)
     {
-        $this->pdoStatement = $this->pdo->query('SELECT Comment.title, Comment.content FROM Chapter, Comment WHERE Comment.chapter_id = Chapter.id AND chapter_id = :chapter_id');
-        dump($this->pdoStatement);
-        die;
+        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM comments WHERE chapter_id = :chapter_id');
         $this->pdoStatement->bindValue(':chapter_id', $chapterId, PDO::PARAM_INT);
+        $this->pdoStatement->execute();
 
         $comments = [];
 
-        while ($comment = $this->pdoStatement->fetchObject('BilletSimple\Model\Chapter'))
+        while ($comment = $this->pdoStatement->fetchObject('BilletSimple\Model\Comment'))
         {
             $comments[] = $comment;
         }

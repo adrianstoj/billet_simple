@@ -6,19 +6,22 @@
  * Time: 12:54
  */
 
-namespace BilletSimple;
+namespace BilletSimple\Model;
 
 class Comment
 {
     private $id;
 
+    private $author;
+
     private $title;
 
     private $content;
 
+    private $comment_date;
+
     private $chapter_id;
 
-    private $reportings;
 
     public function getId()
     {
@@ -29,6 +32,16 @@ class Comment
     {
         $this->id = $id;
         return $this->id;
+    }
+
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    public function setAuthor($author)
+    {
+        $this->author = $author;
     }
 
     public function getTitle()
@@ -51,6 +64,16 @@ class Comment
     {
         $this->id = $content;
         return $this->content;
+    }
+
+    public function getCommentDate()
+    {
+        return $this->comment_date;
+    }
+
+    public function setCommentDate($comment_date)
+    {
+        $this->comment_date = $comment_date;
     }
 
     public function getChapterId()
