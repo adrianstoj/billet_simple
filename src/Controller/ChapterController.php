@@ -23,7 +23,8 @@ class ChapterController extends Controller
     {
         $uri = ($_SERVER['REQUEST_URI']);
         $id = explode('-', $uri);
-        $chapterId = $id[1];
+        $chapterNb = $id[1];
+        $chapterId = $id[2];
         $chapterManager = new ChapterManager();
         $chapter = $chapterManager->read($chapterId);
         $chapterContent = $chapter->getContent();
@@ -32,9 +33,10 @@ class ChapterController extends Controller
         $comments = $commentManager->readAllBy($chapterId);
 
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/chapter.php', [
-            $chapterId,
+            $chapterNb,
             $chapterContent,
-            $comments
+            $comments,
+            $chapterId
         ]);
     }
 
@@ -46,21 +48,23 @@ class ChapterController extends Controller
 
         $uri = ($_SERVER['REQUEST_URI']);
         $id = explode('-', $uri);
-        $chapterId = $id[1];
+        $chapterNb = $id[1];
+        $chapterId = $id[2];
 
         $date = new DateTime();
         $date = date('Y-m-d H:i:s');
 
-        $commentManager = new CommentManager();
         $comment = new Comment();
         $comment->setAuthor($author);
         $comment->setTitle($title);
         $comment->setContent($content);
         $comment->setCommentDate($date);
         $comment->setChapterId($chapterId);
+
+        $commentManager = new CommentManager();
         $commentManager->create($comment);
 
-        header('Location: /chapitre-' . $chapterId);
+        header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
     }
 
     public function reportComment()
@@ -68,13 +72,14 @@ class ChapterController extends Controller
         $postValues = $_POST['report'];
         $commentChapterIDs = explode(' ', $postValues);
         $commentId = $commentChapterIDs[0];
-        $chapterId = $commentChapterIDs[1];
+        $chapterNb = $commentChapterIDs[1];
+        $chapterId = $commentChapterIDs[2];
 
         $reportingManager = new ReportingManager();
         $reporting = new Reporting();
         $reporting->setCommentId($commentId);
         $reportingManager->create($reporting);
 
-        header('Location: /chapitre-' . $chapterId);
+        header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
     }
 }

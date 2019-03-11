@@ -28,4 +28,18 @@ class ReportingManager
         $this->pdoStatement->bindValue(':comment_id', $reporting->getCommentId(), PDO::PARAM_INT);
         $this->pdoStatement->execute();
     }
+
+    public function readAll()
+    {
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM reportings');
+
+        $reportings = [];
+
+        while ($reporting = $this->pdoStatement->fetchObject('BilletSimple\Model\Reporting'))
+        {
+            $reportings[] = $reporting;
+        }
+
+        return $reportings;
+    }
 }

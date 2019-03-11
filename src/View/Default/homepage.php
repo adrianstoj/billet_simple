@@ -15,7 +15,9 @@
 <ul>
 <?php
 foreach ($data[0] as $chapter) {
-    echo ('<a href="'. $chapter->getSlug(). '"><li>'. $chapter->getTitle(). '</li></a>');
+    echo ('<a href="'. $chapter->getSlug(). '-'. $chapter->getId(). '"><li>'. $chapter->getTitle(). '</li></a>');
 }
 ?>
 </ul>
+
+<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>

@@ -49,6 +49,35 @@ class CommentManager
         return $comments;
     }
 
+    public function readAll()
+    {
+        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM comments');
+        $this->pdoStatement->execute();
+
+        $comments = [];
+
+        while ($comment = $this->pdoStatement->fetchObject('BilletSimple\Model\Comment'))
+        {
+            $comments[] = $comment;
+        }
+
+        return $comments;
+    }
+
+    public function readLast()
+    {
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM comments ORDER BY comment_date DESC LIMIT 3');
+
+        $comments = [];
+
+        while ($comment = $this->pdoStatement->fetchObject('BilletSimple\Model\Comment'))
+        {
+            $comments[] = $comment;
+        }
+
+        return $comments;
+    }
+
     public function update(Comment $comment)
     {
 

@@ -25,7 +25,12 @@ class ChapterManager
 
     public function create(Chapter $chapter)
     {
-
+        $this->pdoStatement = $this->pdo->prepare('INSERT INTO chapters (id, title, content, slug, date) VALUES (NULL, :title, :content, :slug, :date)');
+        $this->pdoStatement->bindValue(':title', $chapter->getTitle(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':content', $chapter->getContent(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':slug', $chapter->getSlug(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':date', $chapter->getDate(), PDO::PARAM_STR);
+        $this->pdoStatement->execute();
     }
 
     public function read($id)
@@ -65,7 +70,7 @@ class ChapterManager
 
     public function readLast()
     {
-        $this->pdoStatement = $this->pdo->query('SELECT * FROM chapters ORDER BY date LIMIT 3');
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM chapters ORDER BY date DESC LIMIT 3');
 
         $chapters = [];
 
@@ -79,11 +84,17 @@ class ChapterManager
 
     public function update(Chapter $chapter)
     {
-
+        $this->pdoStatement = $this->pdo->prepare('UPDATE chapters SET title = :title, content = :content WHERE chapters.id = :id');
+        $this->pdoStatement->bindValue(':title', $chapter->getTitle(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':content', $chapter->getContent(), PDO::PARAM_STR);
+        $this->pdoStatement->bindValue(':id', $chapter->getId(), PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 
     public function delete(Chapter $chapter)
     {
-
+        $this->pdoStatement = $this->pdo->prepare('DELETE FROM chapters WHERE chapters.id = :id');
+        $this->pdoStatement->bindValue(':id', $chapter->getId(), PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 }
