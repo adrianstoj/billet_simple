@@ -86,6 +86,8 @@ class CommentManager
 
     public function delete(Comment $comment)
     {
-
+        $this->pdoStatement = $this->pdo->prepare('DELETE FROM comments WHERE comments.id = :id');
+        $this->pdoStatement->bindValue(':id', $comment->getId(), PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 }

@@ -97,6 +97,14 @@ $routes->add(
         '',
         ['_controller' => 'AdminController'],
         'editComments'));
+$routes->add(
+    'listReportings',
+    new Route('listReportings',
+        '/admin/signalements-commentaire-',
+        'GET',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'listReportings'));
 
 // POST
 $routes->add(
@@ -139,6 +147,22 @@ $routes->add(
         '[0-9]+',
         ['_controller' => 'AdminController'],
         'deleteChapter'));
+$routes->add(
+    'deleteComment',
+    new Route('deleteComment',
+        '/admin/supprimer-commentaire-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'deleteComment'));
+$routes->add(
+    'deleteReporting',
+    new Route('deleteReporting',
+        '/admin/supprimer-signalement-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'deleteReporting'));
 
 
 $router = new Router($routes);

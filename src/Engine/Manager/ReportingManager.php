@@ -29,6 +29,22 @@ class ReportingManager
         $this->pdoStatement->execute();
     }
 
+    public function readAllBy($commentId)
+    {
+        $this->pdoStatement = $this->pdo->prepare('SELECT * FROM reportings WHERE comment_id = :comment_id');
+        $this->pdoStatement->bindValue(':comment_id', $commentId, PDO::PARAM_INT);
+        $this->pdoStatement->execute();
+
+        $reportings = [];
+
+        while ($reporting = $this->pdoStatement->fetchObject('BilletSimple\Model\Reporting'))
+        {
+            $reportings[] = $reporting;
+        }
+
+        return $reportings;
+    }
+
     public function readAll()
     {
         $this->pdoStatement = $this->pdo->query('SELECT * FROM reportings');
@@ -41,5 +57,12 @@ class ReportingManager
         }
 
         return $reportings;
+    }
+
+    public function delete(Reporting $reporting)
+    {
+        $this->pdoStatement = $this->pdo->prepare('DELETE FROM reportings WHERE reportings.id = :id');
+        $this->pdoStatement->bindValue(':id', $reporting->getId(), PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 }

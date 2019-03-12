@@ -17,7 +17,7 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
         <th scope="col">Auteur</th>
         <th scope="col">Date</th>
         <th scope="col">Chapitre</th>
-        <th scope="col">Numéro interne</th>
+        <th scope="col">Signalements</th>
         <th scope="col">Modifier</th>
     </tr>
     </thead>
@@ -30,12 +30,14 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
         '<td>'. $comment->getContent().'</td>'.
         '<td>'. $comment->getAuthor().'</td>'.
         '<td>'. $comment->getCommentDate().'</td>'.
-        '<td>Chapitre</td>'.
-        '<td>'. $comment->getChapterId().'</td>'.
-        '<td><button class="btn btn-primary">Modifier</button> <button class="btn btn-danger">Supprimer</button></td>'.
+        '<td>'. $comment->getChapterNumber().'</td>'.
+        '<td><a href="/admin/signalements-commentaire-'. $comment->getId().'"><button class="btn btn-primary">Voir</button></a></td>'.
+        '<td><button class="btn btn-primary">Modifier</button><form action="/admin/supprimer-commentaire-'. $comment->getId().'" method="post"><button class="btn btn-danger" type="submit" name="delete">Supprimer</button></form></td>'.
     '</tr>');
     }
     ?>
     </tbody>
 </table>
+
+
 <?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>

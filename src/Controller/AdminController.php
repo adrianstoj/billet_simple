@@ -13,6 +13,8 @@ use BilletSimple\Engine\Manager\ChapterManager;
 use BilletSimple\Engine\Manager\CommentManager;
 use BilletSimple\Engine\Manager\ReportingManager;
 use BilletSimple\Model\Chapter;
+use BilletSimple\Model\Comment;
+use BilletSimple\Model\Reporting;
 use DateTime;
 
 class AdminController extends Controller
@@ -121,27 +123,58 @@ class AdminController extends Controller
 
     public function editComments()
     {
-//        $chapterManager = new ChapterManager();
-//        $chapters = $chapterManager->readAll();
-//        $chaptersId = [];
-//        foreach ($chapters as $chapter) {
-//            $chapterId = $chapter->getId();
-//            array_push($chaptersId, $chapterId);
-//        }
-//        dump($chaptersId);
-//
         $commentManager = new CommentManager();
-//        $allComments = [];
-//        foreach ($chaptersId as $chapterId) {
-//            $comments = $commentManager->readAllBy($chapterId);
-//            array_push($allComments, $comments);
-//        }
-//        dump($allComments);
-
         $comments = $commentManager->readAll();
 
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-comments.php', [
             $comments
         ]);
+    }
+
+    public function deleteComment()
+    {
+        $uri = ($_SERVER['REQUEST_URI']);
+        $id = explode('-', $uri);
+        $commentId = $id[2];
+
+        $comment = new Comment();
+        $comment->setId($commentId);
+
+        $commentManager = new CommentManager();
+        $commentManager->delete($comment);
+
+        header('Location: /admin/editer-commentaires');
+    }
+
+    public function listReportings()
+    {
+        $uri = ($_SERVER['REQUEST_URI']);
+        $id = explode('-', $uri);
+        $commentId = $id[2];
+
+        $reportingManager = new ReportingManager();
+        $reportings = $reportingManager->readAllBy($commentId);
+
+        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/list-reportings.php', [
+            $reportings,
+            $commentId
+        ]);
+    }
+
+    public function deleteReporting()
+    {
+        $uri = ($_SERVER['REQUEST_URI']);
+        $id = explode('-', $uri);
+        $reportingId = $id[2];
+
+        $commentId = $_POST['comment'];
+
+        $reporting = new Reporting();
+        $reporting->setId($reportingId);
+
+        $commentManager = new ReportingManager();
+        $commentManager->delete($reporting);
+
+        header('Location: /admin/signalements-commentaire-'. $commentId);
     }
 }
