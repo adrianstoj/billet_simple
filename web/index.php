@@ -3,7 +3,6 @@
 use BilletSimple\Engine\Routing\Route;
 use BilletSimple\Engine\Routing\Router;
 use BilletSimple\Engine\Routing\RouteCollection;
-use BilletSimple\Engine\Routing\TestRouting;
 
 require_once '../vendor/autoload.php';
 
