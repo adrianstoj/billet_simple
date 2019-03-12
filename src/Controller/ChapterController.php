@@ -60,6 +60,7 @@ class ChapterController extends Controller
         $comment->setContent($content);
         $comment->setCommentDate($date);
         $comment->setChapterId($chapterId);
+        $comment->setChapterNumber($chapterNb);
 
         $commentManager = new CommentManager();
         $commentManager->create($comment);

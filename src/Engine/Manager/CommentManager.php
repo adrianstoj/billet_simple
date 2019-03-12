@@ -24,12 +24,13 @@ class CommentManager
 
     public function create(Comment $comment)
     {
-        $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments (id, author, title, content, comment_date, chapter_id) VALUES (NULL, :author, :title, :content, :comment_date, :chapter_id)');
+        $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments (id, author, title, content, comment_date, chapter_id, chapter_number) VALUES (NULL, :author, :title, :content, :comment_date, :chapter_id, :chapter_number)');
         $this->pdoStatement->bindValue(':author', $comment->getAuthor(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':title', $comment->getTitle(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':content', $comment->getContent(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':comment_date', $comment->getCommentDate(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':chapter_id', $comment->getChapterId(), PDO::PARAM_INT);
+        $this->pdoStatement->bindValue(':chapter_number', $comment->getChapterNumber(), PDO::PARAM_INT);
         $this->pdoStatement->execute();
     }
 

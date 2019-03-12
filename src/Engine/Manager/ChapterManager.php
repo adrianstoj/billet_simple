@@ -25,7 +25,8 @@ class ChapterManager
 
     public function create(Chapter $chapter)
     {
-        $this->pdoStatement = $this->pdo->prepare('INSERT INTO chapters (id, title, content, slug, date) VALUES (NULL, :title, :content, :slug, :date)');
+        $this->pdoStatement = $this->pdo->prepare('INSERT INTO chapters (id, number, title, content, slug, date) VALUES (NULL, :number, :title, :content, :slug, :date)');
+        $this->pdoStatement->bindValue(':number', $chapter->getNumber(), PDO::PARAM_INT);
         $this->pdoStatement->bindValue(':title', $chapter->getTitle(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':content', $chapter->getContent(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':slug', $chapter->getSlug(), PDO::PARAM_STR);
@@ -84,7 +85,8 @@ class ChapterManager
 
     public function update(Chapter $chapter)
     {
-        $this->pdoStatement = $this->pdo->prepare('UPDATE chapters SET title = :title, content = :content WHERE chapters.id = :id');
+        $this->pdoStatement = $this->pdo->prepare('UPDATE chapters SET number = :number, title = :title, content = :content WHERE chapters.id = :id');
+        $this->pdoStatement->bindValue(':number', $chapter->getNumber(), PDO::PARAM_INT);
         $this->pdoStatement->bindValue(':title', $chapter->getTitle(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':content', $chapter->getContent(), PDO::PARAM_STR);
         $this->pdoStatement->bindValue(':id', $chapter->getId(), PDO::PARAM_INT);

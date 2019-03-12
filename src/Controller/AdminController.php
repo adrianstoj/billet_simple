@@ -40,14 +40,16 @@ class AdminController extends Controller
 
     public function postChapter()
     {
+        $number = $_POST['number'];
         $title = $_POST['title'];
         $content = $_POST['content'];
-        $slug = 'chapitre-'. $_POST['slug'];
+        $slug = 'chapitre-'. $_POST['number'];
         $date = new DateTime();
         $date = date('Y-m-d H:i:s');
 
         $chapter = new Chapter();
         $chapter->setTitle($title);
+        $chapter->setNumber($number);
         $chapter->setContent($content);
         $chapter->setSlug($slug);
         $chapter->setDate($date);
@@ -83,6 +85,7 @@ class AdminController extends Controller
 
     public function postEditChapter()
     {
+        $chapterNb = $_POST['number'];
         $uri = ($_SERVER['REQUEST_URI']);
         $id = explode('-', $uri);
         $chapterId = $id[2];
@@ -90,6 +93,7 @@ class AdminController extends Controller
         $content = $_POST['content'];
 
         $chapter = new Chapter();
+        $chapter->setNumber($chapterNb);
         $chapter->setTitle($title);
         $chapter->setContent($content);
         $chapter->setId($chapterId);
@@ -97,7 +101,7 @@ class AdminController extends Controller
         $chapterManager = new ChapterManager();
         $chapterManager->update($chapter);
 
-        header('Location: /admin/editer-chapitre-'. $chapterId);
+        header('Location: /admin/edition-chapitre');
     }
 
     public function deleteChapter()
