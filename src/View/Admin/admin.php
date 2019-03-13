@@ -5,6 +5,16 @@
  * Date: 07/03/19
  * Time: 18:58
  */
+require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
+{
+    header("HTTP/1.1 403 Unauthorized" );
+    exit;
+}
+elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESSION['role'])) {
+    header("HTTP/1.1 403 Unauthorized" );
+    exit;
+}
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 ?>
 
@@ -14,7 +24,7 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 <a href="/admin/nouveau-chapitre"><button class="btn btn-primary">Ecrire un chapitre</button></a>
 <a href="/admin/edition-chapitre"><button class="btn btn-primary">Modifier un chapitre</button></a>
 <a href="/admin/editer-commentaires"><button class="btn btn-primary">Administrer les commentaires</button></a>
-<button class="btn btn-primary">Créer un utilisateur</button>
+    <a href="/admin/editer-utilisateur"><button class="btn btn-primary">Editer un utilisateur</button></a>
 
 <p>Signalements:</p>
 <ul id="reportingsList">

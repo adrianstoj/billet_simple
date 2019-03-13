@@ -5,6 +5,16 @@
  * Date: 11/03/19
  * Time: 12:03
  */
+require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
+{
+    header("HTTP/1.1 403 Unauthorized" );
+    exit;
+}
+elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESSION['role'])) {
+    header("HTTP/1.1 403 Unauthorized" );
+    exit;
+}
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
     <div id="home_image"></div>
     <h2>EDITER CHAPITRE</h2>

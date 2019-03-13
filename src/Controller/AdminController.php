@@ -12,9 +12,11 @@ use BilletSimple\Engine\Controller;
 use BilletSimple\Engine\Manager\ChapterManager;
 use BilletSimple\Engine\Manager\CommentManager;
 use BilletSimple\Engine\Manager\ReportingManager;
+use BilletSimple\Engine\Manager\UserManager;
 use BilletSimple\Model\Chapter;
 use BilletSimple\Model\Comment;
 use BilletSimple\Model\Reporting;
+use BilletSimple\Model\User;
 use DateTime;
 
 class AdminController extends Controller
@@ -176,5 +178,38 @@ class AdminController extends Controller
         $commentManager->delete($reporting);
 
         header('Location: /admin/signalements-commentaire-'. $commentId);
+    }
+
+    public function editUser()
+    {
+        $userManager = new UserManager();
+        $users = $userManager->readAll();
+
+        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-user.php', [
+            $users
+        ]);
+    }
+
+    public function createUser()
+    {
+        if (isset($_POST['login']) && $_POST['password'] && $_POST['role'])
+        {
+            $login = $_POST['login'];
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $roleId = $_POST['role'];
+
+            $user = new User();
+            $user->setLogin($login);
+            $user->setPassword($password);
+            $user->setRoleId($roleId);
+
+            $userManager = new UserManager();
+            $userManager->create($user);
+
+            header('Location: /admin/editer-utilisateur');
+        }
+        else {
+            header('Location: /404');
+        }
     }
 }

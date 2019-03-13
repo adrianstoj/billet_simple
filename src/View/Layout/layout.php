@@ -25,12 +25,21 @@
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" id="fix-nav-second" href="/contact"><i class="fas fa-envelope"></i>Contact</a>
                 </li>
+                <?php if(!isset($_SESSION['login']) AND !isset($_SESSION['role'])){ ?>
                 <li class="sidebar-nav-item">
                     <a class="js-scroll-trigger" id="fix-nav-third" href="/connexion"><i class="fas fa-user"></i>Connexion</a>
                 </li>
+                <?php }else{ ?>
                 <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav-third" href="/admin"><i class="fas fa-user"></i>Administration</a>
+                    <a class="js-scroll-trigger" id="fix-nav-third" href="/deconnexion"><i class="fas fa-user"></i>Déconnexion</a>
                 </li>
+                <?php if(isset($_SESSION['login']) AND isset($_SESSION['role']) AND ($_SESSION['role']) == 1) { ?>
+                <li class="sidebar-nav-item">'
+                    <a class="js-scroll-trigger" id="fix-nav-third" href="/admin"><i class="fas fa-user"></i>Administration</a>
+                '</li>'
+                <?php } ?>
+                <?php } ?>
+
             </ul>
         </nav>
     </header>

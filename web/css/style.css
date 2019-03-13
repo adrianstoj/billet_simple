@@ -159,6 +159,15 @@ h3
     list-style-type: none;
 }
 
+/* Admin header */
+.admin-header {
+    background-color: #7899cd;
+}
+.admin-info {
+    color: #FFFFFF;
+    padding: 2px;
+}
+
 
 
 

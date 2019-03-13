@@ -105,6 +105,30 @@ $routes->add(
         '[0-9]+',
         ['_controller' => 'AdminController'],
         'listReportings'));
+$routes->add(
+    'editUser',
+    new Route('editUser',
+        '/admin/editer-utilisateur',
+        'GET',
+        '',
+        ['_controller' => 'AdminController'],
+        'editUser'));
+$routes->add(
+    'accessDenied',
+    new Route('editUser',
+        '/admin/editer-utilisateur',
+        'GET',
+        '',
+        ['_controller' => 'AdminController'],
+        'editUser'));
+$routes->add(
+    'disconnect',
+    new Route('disconnect',
+        '/deconnexion',
+        'GET',
+        '',
+        ['_controller' => 'UserController'],
+        'disconnect'));
 
 // POST
 $routes->add(
@@ -163,6 +187,22 @@ $routes->add(
         '[0-9]+',
         ['_controller' => 'AdminController'],
         'deleteReporting'));
+$routes->add(
+    'createUser',
+    new Route('createUser',
+        '/nouvel-utilisateur',
+        'POST',
+        '',
+        ['_controller' => 'AdminController'],
+        'createUser'));
+$routes->add(
+    'checkUser',
+    new Route('checkUser',
+        '/verifier-utilisateur',
+        'POST',
+        '',
+        ['_controller' => 'UserController'],
+        'checkUser'));
 
 
 $router = new Router($routes);
