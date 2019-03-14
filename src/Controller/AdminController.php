@@ -212,4 +212,22 @@ class AdminController extends Controller
             header('Location: /404');
         }
     }
+
+    public function updateUser()
+    {
+
+    }
+
+    public function deleteUser()
+    {
+        $userId = $_POST['delete'];
+
+        $user = new User();
+        $user->setId($userId);
+
+        $userManager = new UserManager();
+        $userManager->delete($user);
+
+        header('Location: /admin/editer-utilisateur');
+    }
 }

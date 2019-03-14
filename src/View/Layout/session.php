@@ -6,10 +6,14 @@
  * Time: 17:08
  */
 session_start();
-if (isset($_SESSION['login']) AND isset($_SESSION['role']) AND $_SESSION['role'] == 1)
+if (isset($_SESSION['login']) AND isset($_SESSION['role']) AND $_SESSION['role'] == 1 OR
+    isset($_SESSION['login']) AND isset($_SESSION['role']) AND $_SESSION['role'] == 2)
 {
     if ($_SESSION['role'] == 1) {
         $role = 'Admin';
+    }
+    elseif ($_SESSION['role'] == 2) {
+        $role = 'Auteur';
     }
     echo '<div class="admin-header"><p class="admin-info">Bonjour '. $_SESSION['login']. ' vous êtes connecté en tant que '. $role. '</p><a href="/admin">Administration</a> <a href="/deconnexion">Déconnexion</a></div>';
 }

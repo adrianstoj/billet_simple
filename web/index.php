@@ -203,6 +203,14 @@ $routes->add(
         '',
         ['_controller' => 'UserController'],
         'checkUser'));
+$routes->add(
+    'deleteUser',
+    new Route('deleteUser',
+        '/admin/supprimer-utilisateur-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'deleteUser'));
 
 
 $router = new Router($routes);

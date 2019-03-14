@@ -47,7 +47,7 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
                 '<th scope="row">'. $user->getId().'</th>'.
                 '<th scope="row">'. $user->getLogin().'</th>'.
                 '<th scope="row">'. $role. '</th>'.
-                '<td><button class="btn btn-primary">Modifier</button><form action="" method="post"><button class="btn btn-danger" type="submit" name="delete">Supprimer</button></form></td>'.
+                '<td><button class="btn btn-primary">Modifier</button><form action="/admin/supprimer-utilisateur-'. $user->getId().'" method="post"><button class="btn btn-danger" type="submit" name="delete" value="'. $user->getId().'">Supprimer</button></form></td>'.
                 '</tr>');
         }
 //        ?>
