@@ -5,17 +5,19 @@
  * Date: 12/03/19
  * Time: 17:27
  */
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+session_start();
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
-<div class="wrapper">
+<div id="login-img"></div>
+<div id="wrapper-login">
     <div id="formContent">
         <form action="/verifier-utilisateur" method="post">
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" required>
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" required>
-            <input type="submit" class="fadeIn fourth" value="Log In">
+            <input type="text" id="login" name="login" placeholder="Pseudo" required>
+            <input type="password" id="password" name="password" placeholder="Mot de passe"" required>
+            <input type="submit" id="login-btn" value="Connexion">
         </form>
     </div>
 </div>
+
 
 <?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>

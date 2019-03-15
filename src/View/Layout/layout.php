@@ -30,17 +30,31 @@
                     <a class="js-scroll-trigger" id="fix-nav-third" href="/connexion"><i class="fas fa-user"></i>Connexion</a>
                 </li>
                 <?php }else{ ?>
-                <li class="sidebar-nav-item">
-                    <a class="js-scroll-trigger" id="fix-nav-third" href="/deconnexion"><i class="fas fa-user"></i>Déconnexion</a>
-                </li>
                 <?php if(isset($_SESSION['login']) AND isset($_SESSION['role']) AND ($_SESSION['role']) == 1 OR
                         isset($_SESSION['login']) AND isset($_SESSION['role']) AND ($_SESSION['role']) == 2) { ?>
-                <li class="sidebar-nav-item">'
-                    <a class="js-scroll-trigger" id="fix-nav-third" href="/admin"><i class="fas fa-user"></i>Administration</a>
-                '</li>'
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger"href="/admin"><i class="fas fa-user"></i>Admin</a>
+                </li>
                 <?php } ?>
+                <li class="sidebar-nav-item">
+                    <a class="js-scroll-trigger" href="/deconnexion">Déconnexion</a>
+                </li>
                 <?php } ?>
 
             </ul>
         </nav>
+        <?php
+        if (isset($_SESSION['login']) AND isset($_SESSION['role']) AND $_SESSION['role'] == 1 OR
+            isset($_SESSION['login']) AND isset($_SESSION['role']) AND $_SESSION['role'] == 2)
+        {
+            if ($_SESSION['role'] == 1) {
+                $role = 'Admin';
+            }
+            elseif ($_SESSION['role'] == 2) {
+                $role = 'Auteur';
+            }
+            echo '<div class="admin-header"><p class="admin-info">Bonjour<b> '. $_SESSION['login']. ' </b>vous êtes connecté en tant que '. $role. '</p><a href="/admin">Panel d\'administration</a> <a href="/deconnexion" id="header-disconnect">Déconnexion</a></div>';
+        }
+        ?>
     </header>
+

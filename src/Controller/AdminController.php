@@ -195,8 +195,17 @@ class AdminController extends Controller
         if (isset($_POST['login']) && $_POST['password'] && $_POST['role'])
         {
             $login = $_POST['login'];
+            $role = $_POST['role'];
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $roleId = $_POST['role'];
+            if ($role == 'admin') {
+                $roleId = 1;
+            }
+            elseif ($role == 'author') {
+                $roleId = 2;
+            }
+            elseif ($role == 'moderator') {
+                $roleId = 3;
+            }
 
             $user = new User();
             $user->setLogin($login);

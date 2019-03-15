@@ -5,7 +5,7 @@
  * Date: 24/02/19
  * Time: 10:52
  */
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+session_start();
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
 <div id="home_image"></div>

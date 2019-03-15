@@ -27,6 +27,7 @@ class ChapterController extends Controller
         $chapterId = $id[2];
         $chapterManager = new ChapterManager();
         $chapter = $chapterManager->read($chapterId);
+        $chapterTitle = $chapter->getTitle();
         $chapterContent = $chapter->getContent();
 
         $commentManager = new CommentManager();
@@ -36,36 +37,42 @@ class ChapterController extends Controller
             $chapterNb,
             $chapterContent,
             $comments,
-            $chapterId
+            $chapterId,
+            $chapterTitle
         ]);
     }
 
     public function addComment()
     {
-        $author = $_POST['author'];
-        $title = $_POST['title'];
-        $content = $_POST['content'];
+        if (isset($_POST['author']) && $_POST['content']) {
+            $author = htmlspecialchars($_POST['author']);
+            $title = htmlspecialchars($_POST['title']);
+            $content = htmlspecialchars($_POST['content']);
 
-        $uri = ($_SERVER['REQUEST_URI']);
-        $id = explode('-', $uri);
-        $chapterNb = $id[1];
-        $chapterId = $id[2];
+            $uri = ($_SERVER['REQUEST_URI']);
+            $id = explode('-', $uri);
+            $chapterNb = $id[1];
+            $chapterId = $id[2];
 
-        $date = new DateTime();
-        $date = date('Y-m-d H:i:s');
+            $date = new DateTime();
+            $date = date('Y-m-d H:i:s');
 
-        $comment = new Comment();
-        $comment->setAuthor($author);
-        $comment->setTitle($title);
-        $comment->setContent($content);
-        $comment->setCommentDate($date);
-        $comment->setChapterId($chapterId);
-        $comment->setChapterNumber($chapterNb);
+            $comment = new Comment();
+            $comment->setAuthor($author);
+            $comment->setTitle($title);
+            $comment->setContent($content);
+            $comment->setCommentDate($date);
+            $comment->setChapterId($chapterId);
+            $comment->setChapterNumber($chapterNb);
 
-        $commentManager = new CommentManager();
-        $commentManager->create($comment);
+            $commentManager = new CommentManager();
+            $commentManager->create($comment);
 
-        header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
+            header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
+        }
+        else {
+            header('Location: /404');
+        }
     }
 
     public function reportComment()

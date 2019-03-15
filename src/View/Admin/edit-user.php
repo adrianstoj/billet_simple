@@ -5,7 +5,7 @@
  * Date: 13/03/19
  * Time: 12:08
  */
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+session_start();
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );
@@ -23,7 +23,11 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
     <form action="/nouvel-utilisateur" method="post">
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" required>
         <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
-        <input type="number" id="role" class="fadeIn third" name="role" placeholder="role" required>
+        <select name="role" size="1" required>
+            <option value="admin">Admin</option>
+            <option value="author">Auteur</option>
+            <option value="moderator">Modérateur</option>
+        </select>
         <input type="submit" class="btn btn-primary" value="Créer">
     </form>
 </div>

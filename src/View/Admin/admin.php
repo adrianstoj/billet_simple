@@ -5,7 +5,7 @@
  * Date: 07/03/19
  * Time: 18:58
  */
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/session.php';
+session_start();
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );
@@ -18,8 +18,8 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 ?>
 
-<div id="home_image"></div>
-<h2>ADMIN</h2>
+<div class="header-img"></div>
+<h2 class="header-title">Administration</h2>
 
 <a href="/admin/nouveau-chapitre"><button class="btn btn-primary">Ecrire un chapitre</button></a>
 <a href="/admin/edition-chapitre"><button class="btn btn-primary">Modifier un chapitre</button></a>
