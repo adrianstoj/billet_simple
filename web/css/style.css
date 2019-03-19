@@ -95,6 +95,7 @@ body
     color: #fff;
     line-height: 50px;
     z-index: 999;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 1);
 }
 
 .menu-toggle:focus, .menu-toggle:hover
@@ -206,7 +207,7 @@ body
 #home-container-intro, #home-container-links {
     margin-bottom: 50px;
 }
-#home-h4-link {
+.home-h4-link {
     font-size: 35px;
     padding-left: 30px;
     text-align: center;
@@ -318,7 +319,7 @@ body
     left: 90%;
 }
 
-#myBtn {
+#upBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -333,10 +334,12 @@ body
     border-radius: 30px;
     font-size: 18px;
     width: 53px;
+    opacity: 0.7;
 }
 
-#myBtn:hover {
-    background-color: #262626;
+#upBtn:hover {
+    background-color: #0d0d0d;
+    opacity: 0.9;
 }
 
 /* Footer */
@@ -420,10 +423,10 @@ body
     margin-bottom: 10px;
 }
 #wrapper-contact {
-     position: absolute;
-     top: 30%;
-     left: 39%;
- }
+    position: absolute;
+    top: 30%;
+    left: 39%;
+}
 
 /* Mentions légales */
 #title-notice {

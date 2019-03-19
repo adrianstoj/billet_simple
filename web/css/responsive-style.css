@@ -1,0 +1,137 @@
+/* All before 1024px */
+@media all and (max-width: 1024px)  {
+    #home-h1 {
+        left: 18%;
+    }
+    #home-h2 {
+        display: none;
+    }
+    #text-footer {
+        display: none;
+    }
+    .header-title {
+        left: 20%;
+    }
+    .report-comment {
+        left: 70%;
+    }
+    .menu-toggle {
+        right: 0;
+    }
+    .comments-responsive {
+        display: none;
+    }
+    .table button {
+        font-size: 8px;
+    }
+    .table {
+        font-size: 8px;
+    }
+}
+
+/* Tablet */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #home-h3 {
+        top: 45%;
+    }
+
+    #home-btn {
+        top: 57%;
+        left: 43%;
+    }
+
+    .header-title-chapter {
+        font-size: 30px;
+    }
+    #formContact {
+        width: 500px;
+    }
+    #wrapper-contact {
+        left: 24%;
+    }
+    #wrapper-login {
+        left: 15%;
+    }
+    .admin-header {
+        font-size: 12px;
+    }
+    #header-disconnect {
+        margin-right: 9%;
+    }
+}
+
+    /* Mobile*/
+    @media all and (max-width: 736px) {
+        body {
+            width: 100%;
+        }
+
+        #home-h1, #home-h3 {
+            font-size: 40px;
+            left: 10%;
+        }
+
+        #home-btn {
+            top: 63%;
+            left: 36%;
+            height: 38px;
+            width: 100px;
+            font-size: 17px;
+        }
+
+        #homepage-img {
+            height: 700px;
+        }
+
+        #home-down {
+            left: 47%;
+            font-size: 32px;
+        }
+
+        .home-h4-link {
+            font-size: 28px;
+        }
+
+        .header-img {
+            height: 200px;
+        }
+
+        .header-title {
+            top: 9%;
+            font-size: 40px;
+        }
+
+        .header-title-chapter {
+            font-size: 21px;
+        }
+
+        .report-comment {
+            left: 44%;
+        }
+        #formContact, .formContent {
+            width: 100%;
+        }
+        #title-contact {
+            margin-left: 10%;
+            color: #FFFFFF;
+        }
+        #wrapper-contact {
+            top: 20%;
+            left: 24%;
+        }
+        #login-img {
+            height: 700px;
+        }
+        #wrapper-login {
+            left: 0;
+        }
+        .admin-header {
+            font-size: 11px;
+        }
+        #header-disconnect {
+            margin-right: 17%;
+        }
+        .admin-info {
+            display: none;
+        }
+    }

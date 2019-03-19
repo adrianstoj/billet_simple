@@ -1,4 +1,4 @@
-<button onclick="topFunction()" id="myBtn" title="Remonter la page"><i class="glyphicon glyphicon-chevron-up"></i></button>
+<button onclick="topFunction()" id="upBtn" title="Remonter la page"><i class="glyphicon glyphicon-chevron-up"></i></button>
 <div class="footer">
     <a href="/mentions-legales" class="footer-link">Mentions légales</a>
         <p id="text-footer">Site réalisé par Adrian Stoj dans le cadre de la formation Développer Web Junior de OpenClassrooms</p>

@@ -18,8 +18,8 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php' ?>
     Sed quis velit vel lectus efficitur lacinia eget hendrerit risus. Vivamus at pharetra massa, id lobortis tortor. Suspendisse sit amet arcu eget augue consectetur porta at ut dolor. Ut mollis odio id varius ornare. Mauris feugiat luctus ligula quis cursus. Etiam vel ex a libero tincidunt blandit a id orci. Vivamus sit amet blandit eros. In sed nibh eu orci vestibulum blandit non vitae tellus. Vestibulum blandit volutpat purus nec sollicitudin. Fusce ut urna lectus. Morbi volutpat a risus in volutpat. Ut dignissim, leo vitae fringilla egestas, odio massa posuere ante, vel egestas eros felis at dolor. Ut sed tellus magna. Duis mattis dolor in nulla imperdiet malesuada.</p>
 </div>
 <div id="home-container-links">
-    <h4 id="home-h4-link"><a href="/chapitre-1-1"><i class="glyphicon glyphicon-chevron-right"></i>COMMENCER LA LECTURE<i class="glyphicon glyphicon-chevron-left"></i></a></h4>
-    <h4 id="home-h4-link"><a href="table"><i class="glyphicon glyphicon-chevron-right"></i>VOIR TOUS LES CHAPITRES<i class="glyphicon glyphicon-chevron-left"></i></a></h4>
+    <h4 class="home-h4-link"><a href="/chapitre-1-1"><i class="glyphicon glyphicon-chevron-right"></i>COMMENCER LA LECTURE<i class="glyphicon glyphicon-chevron-left"></i></a></h4>
+    <h4 class="home-h4-link"><a href="table"><i class="glyphicon glyphicon-chevron-right"></i>VOIR TOUS LES CHAPITRES<i class="glyphicon glyphicon-chevron-left"></i></a></h4>
 </div>
 <h4 id="home-h4-chapters">DERNIERS CHAPITRES</h4>
 <ul id="home-list-chapters">
