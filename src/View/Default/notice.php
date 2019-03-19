@@ -6,6 +6,7 @@
  * Time: 13:43
  */
 session_start();
+$pageTitle = 'Mentions légales';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
     <div class="header-img"></div>

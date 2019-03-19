@@ -6,6 +6,7 @@
  * Time: 18:58
  */
 session_start();
+$pageTitle = 'Tableau de bord';
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );

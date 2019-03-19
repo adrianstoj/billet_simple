@@ -1,5 +1,6 @@
 <?php
 session_start();
+$pageTitle = 'Billet simple pour l\'Alaska premier opus numérique par Jean Forteroche';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php' ?>
 
 <!--<div id="home_image"></div>-->

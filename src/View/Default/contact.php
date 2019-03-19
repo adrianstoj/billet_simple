@@ -6,6 +6,7 @@
  * Time: 12:14
  */
 session_start();
+$pageTitle = 'Contactez Jean Forteroche';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
     <div id="login-img"></div>
     <div id="wrapper-contact">

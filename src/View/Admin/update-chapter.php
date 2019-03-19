@@ -6,6 +6,7 @@
  * Time: 12:03
  */
 session_start();
+$pageTitle = 'Editer chapitre';
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );

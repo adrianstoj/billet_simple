@@ -6,6 +6,7 @@
  * Time: 14:48
  */
 session_start();
+$pageTitle = 'Signalements';
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );

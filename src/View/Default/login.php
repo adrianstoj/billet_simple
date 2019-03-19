@@ -6,6 +6,7 @@
  * Time: 17:27
  */
 session_start();
+$pageTitle = 'Connexion';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
 <div id="login-img"></div>

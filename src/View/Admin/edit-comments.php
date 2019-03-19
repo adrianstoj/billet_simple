@@ -6,6 +6,7 @@
  * Time: 18:39
  */
 session_start();
+$pageTitle = 'Editer commentaire';
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
 {
     header("HTTP/1.1 403 Unauthorized" );

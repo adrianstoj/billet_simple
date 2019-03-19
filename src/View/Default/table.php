@@ -6,6 +6,7 @@
  * Time: 12:14
  */
 session_start();
+$pageTitle = 'Table du roman Billet Simple pour l\'Alaska';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
 <div class="header-img"></div>

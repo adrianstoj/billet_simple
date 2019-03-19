@@ -6,6 +6,7 @@
  * Time: 12:14
  */
 session_start();
+$pageTitle = 'Chapitre du roman Billet simple pour l\'Alaska par Jean ForteRoche';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 <div class="header-img"></div>
 <h2 class="header-title-chapter"><?php echo $data[4]; ?></h2>
