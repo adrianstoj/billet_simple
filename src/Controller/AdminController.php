@@ -24,7 +24,7 @@ class AdminController extends Controller
     public function index()
     {
         $reportingManager = new ReportingManager();
-        $reportings = $reportingManager->readAll();
+        $reportings = $reportingManager->readLast();
 
         $commentManager = new CommentManager();
         $lastComments = $commentManager->readLast();
@@ -131,6 +131,38 @@ class AdminController extends Controller
         $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-comments.php', [
             $comments
         ]);
+    }
+
+    public function editComment()
+    {
+        $uri = ($_SERVER['REQUEST_URI']);
+        $id = explode('-', $uri);
+        $commentId = $id[2];
+        $commentManager = new CommentManager();
+        $comment = $commentManager->read($commentId);
+
+        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-comment.php', [
+            $comment
+        ]);
+    }
+
+    public function postEditComment()
+    {
+        $uri = ($_SERVER['REQUEST_URI']);
+        $id = explode('-', $uri);
+        $commentId = $id[2];
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+
+        $comment = new Comment();
+        $comment->setTitle($title);
+        $comment->setContent($content);
+        $comment->setId($commentId);
+
+        $commentManager = new CommentManager();
+        $commentManager->update($comment);
+
+        header('Location: /admin/editer-commentaires');
     }
 
     public function deleteComment()

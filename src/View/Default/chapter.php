@@ -8,7 +8,7 @@
 session_start();
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 <div class="header-img"></div>
-<h2 class="header-title"><?php echo $data[4]; ?></h2>
+<h2 class="header-title-chapter"><?php echo $data[4]; ?></h2>
 <div class="chapter-content">
     <p><?php echo $data[1]; ?></p>
 </div>

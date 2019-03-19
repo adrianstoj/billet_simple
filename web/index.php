@@ -98,6 +98,14 @@ $routes->add(
         ['_controller' => 'AdminController'],
         'editComments'));
 $routes->add(
+    'editComment',
+    new Route('editComment',
+        '/admin/editer-commentaire-',
+        'GET',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'editComment'));
+$routes->add(
     'listReportings',
     new Route('listReportings',
         '/admin/signalements-commentaire-',
@@ -129,6 +137,14 @@ $routes->add(
         '',
         ['_controller' => 'UserController'],
         'disconnect'));
+$routes->add(
+    'legalNotice',
+    new Route('disconnect',
+        '/mentions-legales',
+        'GET',
+        '',
+        ['_controller' => 'NoticeController'],
+        'legalNotice'));
 
 // POST
 $routes->add(
@@ -179,6 +195,14 @@ $routes->add(
         '[0-9]+',
         ['_controller' => 'AdminController'],
         'deleteComment'));
+$routes->add(
+    'postEditComment',
+    new Route('postEditComment',
+        '/admin/editer-commentaire-',
+        'POST',
+        '[0-9]+',
+        ['_controller' => 'AdminController'],
+        'postEditComment'));
 $routes->add(
     'deleteReporting',
     new Route('deleteReporting',

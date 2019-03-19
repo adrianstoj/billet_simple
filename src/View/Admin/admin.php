@@ -21,12 +21,18 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
 <div class="header-img"></div>
 <h2 class="header-title">Administration</h2>
 
-<a href="/admin/nouveau-chapitre"><button class="btn btn-primary">Ecrire un chapitre</button></a>
-<a href="/admin/edition-chapitre"><button class="btn btn-primary">Modifier un chapitre</button></a>
-<a href="/admin/editer-commentaires"><button class="btn btn-primary">Administrer les commentaires</button></a>
-    <a href="/admin/editer-utilisateur"><button class="btn btn-primary">Editer un utilisateur</button></a>
+<h3>Tableau de bord</h3>
+<h3>Bienvenue dans votre espace d'administration, ici vous pouvez :</h3>
 
-<p>Signalements:</p>
+<a href="/admin/nouveau-chapitre" class="admin-board"><i class="glyphicon glyphicon-pencil"></i> Ecrire un chapitre</a>
+</br>
+<a href="/admin/edition-chapitre" class="admin-board"><i class="glyphicon glyphicon-edit"></i> Modifier un chapitre</button></a>
+</br>
+<a href="/admin/editer-commentaires" class="admin-board"><i class="glyphicon glyphicon-comment"></i> Administrer les commentaires</a>
+</br>
+<a href="/admin/editer-utilisateur" class="admin-board"><i class="glyphicon glyphicon-user"></i> Editer un utilisateur</a>
+
+<h3>Derniers signalements:</h3>
 <ul id="reportingsList">
 <?php
 foreach ($data[0] as $reporting) {
@@ -35,7 +41,7 @@ foreach ($data[0] as $reporting) {
 ?>
 </ul>
 
-<p>Derniers commentaires:</p>
+<h3>Derniers commentaires:</h3>
 <ul id="lastComments">
     <?php
     foreach ($data[1] as $comment) {

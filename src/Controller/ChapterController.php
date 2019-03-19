@@ -27,19 +27,24 @@ class ChapterController extends Controller
         $chapterId = $id[2];
         $chapterManager = new ChapterManager();
         $chapter = $chapterManager->read($chapterId);
-        $chapterTitle = $chapter->getTitle();
-        $chapterContent = $chapter->getContent();
+        if ($chapter != null) {
+            $chapterTitle = $chapter->getTitle();
+            $chapterContent = $chapter->getContent();
 
-        $commentManager = new CommentManager();
-        $comments = $commentManager->readAllBy($chapterId);
+            $commentManager = new CommentManager();
+            $comments = $commentManager->readAllBy($chapterId);
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/chapter.php', [
-            $chapterNb,
-            $chapterContent,
-            $comments,
-            $chapterId,
-            $chapterTitle
-        ]);
+            $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/chapter.php', [
+                $chapterNb,
+                $chapterContent,
+                $comments,
+                $chapterId,
+                $chapterTitle
+            ]);
+        }
+        else {
+            header('Location: /404');
+        }
     }
 
     public function addComment()

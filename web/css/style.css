@@ -1,7 +1,6 @@
 body
 {
     font-family: 'Open Sans', 'sans-serif', Arial;
-    background-color: #f5f5f5;
 }
 
 /* Sidebar */
@@ -238,7 +237,7 @@ body
 
 /* Global */
 .header-img {
-    background: url(../images/8498614095_037085b7ee_k.jpg) center bottom 0 no-repeat fixed;
+    background: url(../images/8498614095_037085b7ee_k.jpg) 0 no-repeat fixed;
     width: 100%;
     height: 270px;
     position: relative
@@ -247,11 +246,35 @@ body
     width: 80%;
     position: absolute;
     top: 9%;
+    left: 44%;
+    color: #ffffff;
+    font-size: 50px;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+.header-title-chapter {
+    width: 80%;
+    position: absolute;
+    top: 9%;
     left: 11%;
     color: #ffffff;
     font-size: 50px;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
+/* Table */
+#table-ul {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+#table-ul a {
+    font-size: 20px;
+    color: #4485bb;
+}
+#table-ul a:hover {
+    color: #699ec9;
+    text-decoration: none;
+}
+
+
 /* Chapters */
 .chapter-content {
     padding: 40px;
@@ -313,7 +336,35 @@ body
 }
 
 #myBtn:hover {
-    background-color: #262626; /* Add a dark-grey background on hover */
+    background-color: #262626;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer-link {
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+.footer-link:hover {
+    color: #7caad0;
+    text-decoration: none;
+}
+#text-footer {
+    color: #FFFFFF;
+    padding-top: 10px;
+}
+#nav-footer {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+#nav-footer li {
+    margin-left: 20px;
 }
 
 /* Login */
@@ -352,7 +403,45 @@ body
 }
 .footer {
     background-color: #262626;
-    height: 70px;
+    height: 40px;
+}
+
+/* Contact */
+#title-contact {
+    margin-left: 27%;
+    color: #FFFFFF;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+#formContact {
+    width: 500px;
+}
+#formContact textarea {
+    height: 200px;
+    margin-bottom: 10px;
+}
+#wrapper-contact {
+     position: absolute;
+     top: 30%;
+     left: 39%;
+ }
+
+/* Mentions légales */
+#title-notice {
+    margin-left: 2%;
+}
+#legal-notice {
+    width: 90%;
+    margin-left: 40px;
+    text-align: justify;
+}
+
+/* Admin board */
+.admin-board {
+    color: #4485bb;
+    padding: 5px;
+}
+.admin-board:hover {
+    text-decoration: none;
 }
 
 /* Admin header */
@@ -372,6 +461,17 @@ body
 }
 #header-disconnect {
     margin-right: 5%;
+}
+
+/* Admin comments */
+.comment-reported {
+    background-color: #ff3333;
+}
+#container-color-comment {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    background-color: #ff3333;
 }
 
 

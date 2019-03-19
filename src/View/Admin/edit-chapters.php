@@ -16,8 +16,8 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
     exit;
 }
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
-    <div id="home_image"></div>
-    <h2>EDITER CHAPITRE</h2>
+    <div class="header-img"></div>
+    <h2 class="header-title">Editer chapitre</h2>
     <ul>
         <?php
         foreach ($data[0] as $chapter) {

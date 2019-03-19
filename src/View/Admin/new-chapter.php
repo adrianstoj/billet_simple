@@ -16,8 +16,8 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
     exit;
 }
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
-<div id="home_image"></div>
-<h2>NOUVEAU CHAPITRE</h2>
+<div class="header-img"></div>
+<h2 class="header-title">Nouveau chapitre</h2>
 <form action="publierChapitre" method="post">
     <input type="number" class="form-control" id="formNumber" placeholder="Numéro du chapitre" name="number">
     <input type="text" class="form-control" id="formChapter" placeholder="Titre du chapitre" name="title">

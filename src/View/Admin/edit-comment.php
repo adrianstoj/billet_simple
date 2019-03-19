@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: adrian
- * Date: 11/03/19
- * Time: 12:03
+ * Date: 18/03/19
+ * Time: 17:06
  */
 session_start();
 if (!isset($_SESSION['login']) AND !isset($_SESSION['role']))
@@ -16,11 +16,10 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
     exit;
 }
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
-<div class="header-img"></div>
-<h2 class="header-title">Editer chapitre</h2>
-    <form action="/admin/editer-chapitre-<?php echo $data[0]->getId(); ?>" method="post">
-        <input type="number" class="form-control" id="formSlug" placeholder="Numéro du chapitre" name="number" value="<?php echo ($data[0]->getNumber()) ?>" >
-        <input type="text" class="form-control" id="formChapter" placeholder="Titre du chapitre" name="title" value="<?php echo ($data[0]->getTitle()) ?>">
+    <div class="header-img"></div>
+    <h2 class="header-title">Editer commentaire</h2>
+    <form action="/admin/editer-commentaire-<?php echo $data[0]->getId(); ?>" method="post">
+        <input type="text" class="form-control" id="formChapter" placeholder="Titre du commentaire" name="title" value="<?php echo ($data[0]->getTitle()) ?>">
         <textarea name="content" class="adminarea""><?php echo ($data[0]->getContent()) ?></textarea>
         <button type="submit" class="btn btn-primary">Editer</button>
     </form>

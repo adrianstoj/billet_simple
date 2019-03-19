@@ -16,14 +16,14 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
     exit;
 }
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
-<div id="home_image"></div>
-<h2>EDITER UTILISATEUR</h2>
+<div class="header-img"></div>
+<h2 class="header-title">Editeur utilisateur</h2>
 <h3>Créer un nouvel utilisateur</h3>
 <div id="formContent">
     <form action="/nouvel-utilisateur" method="post">
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" required>
-        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
-        <select name="role" size="1" required>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Pseudo" required>
+        <input type="text" id="password" class="fadeIn third" name="password" placeholder="Mot de passe" required>
+        Rôle : <select name="role" size="1" required>
             <option value="admin">Admin</option>
             <option value="author">Auteur</option>
             <option value="moderator">Modérateur</option>

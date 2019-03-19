@@ -24,6 +24,8 @@ class Comment
 
     private $chapter_number;
 
+    private $reported;
+
     public function getId()
     {
         return $this->id;
@@ -92,5 +94,15 @@ class Comment
     public function setChapterNumber($chapter_number)
     {
         $this->chapter_number = $chapter_number;
+    }
+
+    public function getReported()
+    {
+        return $this->reported;
+    }
+
+    public function setReported($reported)
+    {
+        $this->chapter_number = $reported;
     }
 }

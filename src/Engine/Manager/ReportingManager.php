@@ -59,6 +59,20 @@ class ReportingManager
         return $reportings;
     }
 
+    public function readLast()
+    {
+        $this->pdoStatement = $this->pdo->query('SELECT * FROM reportings ORDER BY id DESC LIMIT 5');
+
+        $reportings = [];
+
+        while ($reporting = $this->pdoStatement->fetchObject('BilletSimple\Model\Reporting'))
+        {
+            $reportings[] = $reporting;
+        }
+
+        return $reportings;
+    }
+
     public function delete(Reporting $reporting)
     {
         $this->pdoStatement = $this->pdo->prepare('DELETE FROM reportings WHERE reportings.id = :id');
