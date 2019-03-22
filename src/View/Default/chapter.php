@@ -10,6 +10,12 @@ $pageTitle = 'Chapitre du roman Billet simple pour l\'Alaska par Jean ForteRoche
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 <div class="header-img"></div>
 <h2 class="header-title-chapter"><?php echo $data[4]; ?></h2>
+<?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo($_SESSION['success']);
+        unset($_SESSION['success']);?>
+    </div>
+<?php } ?>
 <div class="chapter-content">
     <p><?php echo $data[1]; ?></p>
 </div>

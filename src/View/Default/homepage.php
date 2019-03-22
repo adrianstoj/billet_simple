@@ -3,7 +3,12 @@ session_start();
 $pageTitle = 'Billet simple pour l\'Alaska premier opus numérique par Jean Forteroche';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php' ?>
 
-<!--<div id="home_image"></div>-->
+<?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo($_SESSION['success']);
+        unset($_SESSION['success']);?>
+    </div>
+<?php } ?>
 <div id="homepage-img"></div>
 <h1 id="home-h1">BILLET SIMPLE POUR L'ALASKA</h1>
 <h2 id="home-h2">PREMIER OPUS DE LA SERIE</h2>

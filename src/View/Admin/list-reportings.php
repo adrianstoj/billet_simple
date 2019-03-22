@@ -19,6 +19,12 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 <div id="home_image"></div>
 <h2>EDITER SIGNALEMENTS</h2>
+<?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo($_SESSION['success']);
+        unset($_SESSION['success']);?>
+    </div>
+<?php } ?>
 <table class="table">
 <thead>
 <tr>

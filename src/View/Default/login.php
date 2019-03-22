@@ -9,7 +9,20 @@ session_start();
 $pageTitle = 'Connexion';
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 
-<div id="login-img"></div>
+<div id="login-img">
+    <?php if(isset($_SESSION['success'])) { ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo($_SESSION['success']);
+            unset($_SESSION['success']);?>
+        </div>
+    <?php } ?>
+    <?php if(isset($_SESSION['failure'])) { ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo($_SESSION['failure']);
+            unset($_SESSION['failure']);?>
+        </div>
+    <?php } ?>
+</div>
 <div id="wrapper-login">
     <div id="formContent">
         <form action="/verifier-utilisateur" method="post">

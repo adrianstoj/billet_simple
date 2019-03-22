@@ -7,14 +7,12 @@
         }
     ],
     "require": {
-        "symfony/debug": "^4.2"
+        "symfony/debug": "^4.2",
+        "symfony/var-dumper": "^4.2"
     },
     "autoload": {
         "psr-4": {
             "BilletSimple\\": "src/"
         }
-    },
-    "require-dev": {
-        "symfony/var-dumper": "^4.2"
     }
 }

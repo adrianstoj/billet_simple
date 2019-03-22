@@ -27,6 +27,11 @@ class ReportingManager
         $this->pdoStatement = $this->pdo->prepare('INSERT INTO reportings (id, comment_id) VALUES (NULL, :comment_id)');
         $this->pdoStatement->bindValue(':comment_id', $reporting->getCommentId(), PDO::PARAM_INT);
         $this->pdoStatement->execute();
+
+        $this->pdoStatement = $this->pdo->prepare('UPDATE comments SET reported = :reported WHERE comments.id = :comments_id');
+        $this->pdoStatement->bindValue(':comments_id', $reporting->getCommentId(), PDO::PARAM_INT);
+        $this->pdoStatement->bindValue(':reported', 0, PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 
     public function readAllBy($commentId)

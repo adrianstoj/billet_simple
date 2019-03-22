@@ -18,6 +18,7 @@ use BilletSimple\Model\Comment;
 use BilletSimple\Model\Reporting;
 use BilletSimple\Model\User;
 use DateTime;
+use BilletSimple\Engine\Session\PHPSession;
 
 class AdminController extends Controller
 {
@@ -61,6 +62,8 @@ class AdminController extends Controller
         $chapterManager = new ChapterManager();
         $chapterManager->create($chapter);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le nouveau chapitre a bien été ajouté.');
         header('Location: /admin/nouveau-chapitre');
     }
 
@@ -105,6 +108,8 @@ class AdminController extends Controller
         $chapterManager = new ChapterManager();
         $chapterManager->update($chapter);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le chapitre a bien été édité.');
         header('Location: /admin/edition-chapitre');
     }
 
@@ -162,6 +167,8 @@ class AdminController extends Controller
         $commentManager = new CommentManager();
         $commentManager->update($comment);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le commentaire a bien été modifié.');
         header('Location: /admin/editer-commentaires');
     }
 
@@ -177,6 +184,8 @@ class AdminController extends Controller
         $commentManager = new CommentManager();
         $commentManager->delete($comment);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le commentaire a bien été supprimé.');
         header('Location: /admin/editer-commentaires');
     }
 
@@ -209,6 +218,8 @@ class AdminController extends Controller
         $commentManager = new ReportingManager();
         $commentManager->delete($reporting);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le signalement a bien été supprimé.');
         header('Location: /admin/signalements-commentaire-'. $commentId);
     }
 
@@ -247,11 +258,14 @@ class AdminController extends Controller
             $userManager = new UserManager();
             $userManager->create($user);
 
-            header('Location: /admin/editer-utilisateur');
+            $PHPSession = new PHPSession();
+            $PHPSession->set('success', 'L\'utilisateur a bien été crée.');
         }
         else {
-            header('Location: /404');
+            $PHPSession = new PHPSession();
+            $PHPSession->set('failure', 'L\'utilisateur n\'a pas pû être crée.');
         }
+        header('Location: /admin/editer-utilisateur');
     }
 
     public function updateUser()
@@ -269,6 +283,8 @@ class AdminController extends Controller
         $userManager = new UserManager();
         $userManager->delete($user);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'L\'utilisateur a bien été supprimé.');
         header('Location: /admin/editer-utilisateur');
     }
 }

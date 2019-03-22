@@ -10,6 +10,7 @@ namespace BilletSimple\Controller;
 
 use BilletSimple\Engine\Controller;
 use BilletSimple\Engine\Manager\UserManager;
+use BilletSimple\Engine\Session\PHPSession;
 
 class UserController extends Controller
 {
@@ -29,19 +30,27 @@ class UserController extends Controller
 
             $userManager = new UserManager();
             $user = $userManager->read($login);
-            $isPasswordCorrect = password_verify($password, $user->getPassword());
 
             if ($user == null) {
-                dump('user null');
+                $PHPSession = new PHPSession();
+                $PHPSession->set('failure', 'Attention cet utilisateur n\'existe pas.');
+                header('Location: /connexion');
             }
-            elseif ($isPasswordCorrect == false) {
-                dump('mauvais mdp');
-            }
-            elseif ($isPasswordCorrect == true) {
-                session_start();
-                $_SESSION['login'] = $login;
-                $_SESSION['role'] = $user->getRoleId();
-                header('Location: /');
+            else {
+                $isPasswordCorrect = password_verify($password, $user->getPassword());
+                if ($isPasswordCorrect == false) {
+                    $PHPSession = new PHPSession();
+                    $PHPSession->set('failure', 'Le mot de passe ne correspond pas.');
+                    header('Location: /connexion');
+                }
+                elseif ($isPasswordCorrect == true) {
+                    session_start();
+                    $PHPSession = new PHPSession();
+                    $PHPSession->set('login', $login);
+                    $PHPSession->set('role', $user->getRoleId());
+                    $PHPSession->set('success', 'Connexion réussie.');
+                    header('Location: /');
+                }
             }
         }
     }
@@ -54,6 +63,8 @@ class UserController extends Controller
             $_SESSION = array();
             session_destroy();
 
+            $PHPSession = new PHPSession();
+            $PHPSession->set('success', 'Vous êtes bien déconnecté.');
             header('Location: /');
         }
     }

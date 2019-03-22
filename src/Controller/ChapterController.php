@@ -13,6 +13,7 @@ use BilletSimple\Engine\Controller;
 use BilletSimple\Engine\Manager\ChapterManager;
 use BilletSimple\Engine\Manager\CommentManager;
 use BilletSimple\Engine\Manager\ReportingManager;
+use BilletSimple\Engine\Session\PHPSession;
 use BilletSimple\Model\Comment;
 use BilletSimple\Model\Reporting;
 use DateTime;
@@ -73,10 +74,15 @@ class ChapterController extends Controller
             $commentManager = new CommentManager();
             $commentManager->create($comment);
 
+
+            $PHPSession = new PHPSession();
+            $PHPSession->set('success', 'Votre commentaire a bien été ajouté.');
             header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
         }
         else {
             header('Location: /404');
+            $PHPSession = new PHPSession();
+            $PHPSession->set('failure', 'Votre commentaire n\'a pas été ajouté');
         }
     }
 
@@ -93,6 +99,8 @@ class ChapterController extends Controller
         $reporting->setCommentId($commentId);
         $reportingManager->create($reporting);
 
+        $PHPSession = new PHPSession();
+        $PHPSession->set('success', 'Le commentaire a bien été signalé');
         header('Location: /chapitre-' . $chapterNb. '-'. $chapterId);
     }
 }

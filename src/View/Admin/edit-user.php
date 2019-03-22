@@ -19,6 +19,18 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
 require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
 <div class="header-img"></div>
 <h2 class="header-title">Editeur utilisateur</h2>
+<?php if(isset($_SESSION['success'])) { ?>
+    <div class="alert alert-success" role="alert">
+        <?php echo($_SESSION['success']);
+        unset($_SESSION['success']);?>
+    </div>
+<?php } ?>
+<?php if(isset($_SESSION['failure'])) { ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo($_SESSION['failure']);
+        unset($_SESSION['failure']);?>
+    </div>
+<?php } ?>
 <h3>Créer un nouvel utilisateur</h3>
 <div id="formContent">
     <form action="/nouvel-utilisateur" method="post">
