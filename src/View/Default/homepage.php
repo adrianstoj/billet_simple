@@ -1,7 +1,7 @@
 <?php
 session_start();
 $pageTitle = 'Billet simple pour l\'Alaska premier opus numérique par Jean Forteroche';
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php' ?>
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php' ?>
 
 <?php if(isset($_SESSION['success'])) { ?>
     <div class="alert alert-success" role="alert">
@@ -35,4 +35,4 @@ foreach ($data[0] as $chapter) {
 ?>
 </ul>
 
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>

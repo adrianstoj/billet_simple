@@ -7,7 +7,7 @@
  */
 session_start();
 $pageTitle = 'Table du roman Billet Simple pour l\'Alaska';
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php'; ?>
 
 <div class="header-img"></div>
 <h2 class="header-title">Chapitres</h2>
@@ -20,4 +20,4 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
     ?>
 </ul>
 
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>

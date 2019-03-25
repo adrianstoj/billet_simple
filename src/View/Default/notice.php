@@ -7,7 +7,7 @@
  */
 session_start();
 $pageTitle = 'Mentions légales';
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php'; ?>
 
     <div class="header-img"></div>
     <h2 class="header-title">Mentions légales</h2>
@@ -37,4 +37,4 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
         In hac habitasse platea dictumst. Mauris luctus elementum libero, at blandit ex commodo vel. Morbi eleifend massa a neque pellentesque ornare. Pellentesque finibus ut neque vitae interdum. Pellentesque at vehicula quam, non porttitor nulla. Suspendisse maximus malesuada urna eget hendrerit. Proin faucibus lacus a ante cursus dapibus. Nullam lobortis accumsan condimentum. Phasellus mauris elit, dictum vitae commodo quis, condimentum at tellus. Etiam ut pharetra enim. Cras ut sapien a metus vulputate tincidunt. Cras vel vestibulum nunc, in molestie justo.
     </p>
 
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>

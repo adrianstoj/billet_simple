@@ -16,7 +16,7 @@ elseif (isset($_SESSION['login']) AND isset($_SESSION['role']) AND !isset($_SESS
     header("HTTP/1.1 403 Unauthorized" );
     exit;
 }
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php';
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php';
 ?>
 
 <div class="header-img"></div>
@@ -53,4 +53,4 @@ foreach ($data[0] as $reporting) {
     ?>
 </ul>
 
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>

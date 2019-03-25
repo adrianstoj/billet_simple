@@ -7,7 +7,7 @@
  */
 session_start();
 $pageTitle = 'Chapitre du roman Billet simple pour l\'Alaska par Jean ForteRoche';
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php'; ?>
 <div class="header-img"></div>
 <h2 class="header-title-chapter"><?php echo $data[4]; ?></h2>
 <?php if(isset($_SESSION['success'])) { ?>
@@ -55,4 +55,4 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
     ?>
     </div>
 </ul>
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>
