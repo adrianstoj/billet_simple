@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45aa1c7d-3dc4-472c-a285-9fd92e4fe437" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/github-sync.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-sync.php" beforeDir="false" afterPath="$PROJECT_DIR$/github-sync.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -112,13 +112,13 @@
           <entry key="chapter_id" value="1" />
           <entry key="comments" value="3" />
           <entry key="css" value="19" />
-          <entry key="htaccess" value="1" />
+          <entry key="htaccess" value="2" />
           <entry key="jpeg" value="2" />
           <entry key="jpg" value="5" />
           <entry key="js" value="10" />
           <entry key="json" value="7" />
           <entry key="lock" value="1" />
-          <entry key="php" value="443" />
+          <entry key="php" value="445" />
           <entry key="sql" value="9" />
           <entry key="users" value="1" />
         </counts>
@@ -130,11 +130,11 @@
           <entry key="Image" value="7" />
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="10" />
-          <entry key="PHP" value="441" />
+          <entry key="PHP" value="443" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SQL" value="1" />
           <entry key="Scratch" value="9" />
-          <entry key="htaccess" value="1" />
+          <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -145,9 +145,9 @@
           <entry key="htaccess" value="116" />
           <entry key="js" value="287" />
           <entry key="json" value="1" />
-          <entry key="php" value="26986" />
+          <entry key="php" value="27009" />
           <entry key="sql" value="740" />
-          <entry key="txt" value="1971" />
+          <entry key="txt" value="1996" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -156,8 +156,8 @@
           <entry key="HTML" value="13" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="287" />
-          <entry key="PHP" value="26957" />
-          <entry key="PLAIN_TEXT" value="2018" />
+          <entry key="PHP" value="26980" />
+          <entry key="PLAIN_TEXT" value="2043" />
           <entry key="SQL" value="4" />
           <entry key="Scratch" value="748" />
           <entry key="htaccess" value="116" />
@@ -175,8 +175,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
+            <state relative-caret-position="124">
               <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/github-sync.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -202,20 +211,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="265" column="73" selection-start-line="265" selection-start-column="73" selection-end-line="265" selection-end-column="73" />
+            <state relative-caret-position="5502">
+              <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
               <folding>
                 <element signature="e#124#159#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/github-sync.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -726,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247242000" />
+    <option name="totallyTimeSpent" value="249794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +755,7 @@
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.3287841" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.41439205" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.41322315" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3287841" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -813,10 +813,10 @@
     <MESSAGE value="Update added on comment, conditions for manage nonexistent routes. Add new parameter on comment reported for display reportings on administration. Back-end style ended, script rewrite with native javascript. Notice legal and contact written." />
     <MESSAGE value="Favicon and titles added" />
     <MESSAGE value="Responsive style for mobile and tablet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Responsive style for mobile and tablet" />
+    <MESSAGE value="Delete synchro with git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete synchro with git" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/images/alaska-wilderness-sky-aurora-borealis-41004.jpeg" />
     <entry file="file://$PROJECT_DIR$/web/images/8498614095_037085b7ee_k.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1086,13 +1086,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2478">
@@ -1107,20 +1100,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="265" column="73" selection-start-line="265" selection-start-column="73" selection-end-line="265" selection-end-column="73" />
+        <state relative-caret-position="5502">
+          <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
           <folding>
             <element signature="e#124#159#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/github-sync.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="42">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
         </state>
       </provider>
     </entry>
