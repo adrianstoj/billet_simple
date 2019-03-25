@@ -15,7 +15,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/contact.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Default/contact.php', [
 
         ]);
     }

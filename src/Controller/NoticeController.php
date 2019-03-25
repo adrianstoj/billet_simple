@@ -15,7 +15,7 @@ class NoticeController extends Controller
 {
     public function legalNotice()
     {
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/notice.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Default/notice.php', [
         ]);
     }
 }

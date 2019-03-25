@@ -30,7 +30,7 @@ class AdminController extends Controller
         $commentManager = new CommentManager();
         $lastComments = $commentManager->readLast();
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/admin.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/admin.php', [
             $reportings,
             $lastComments
         ]);
@@ -38,7 +38,7 @@ class AdminController extends Controller
 
     public function writeChapter()
     {
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/new-chapter.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/new-chapter.php', [
 
         ]);
     }
@@ -72,7 +72,7 @@ class AdminController extends Controller
         $manager = new ChapterManager();
         $chapters = $manager->readAll();
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-chapters.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/edit-chapters.php', [
             $chapters
         ]);
     }
@@ -85,7 +85,7 @@ class AdminController extends Controller
         $chapterManager = new ChapterManager();
         $chapter = $chapterManager->read($chapterId);
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/update-chapter.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/update-chapter.php', [
             $chapter
         ]);
     }
@@ -133,7 +133,7 @@ class AdminController extends Controller
         $commentManager = new CommentManager();
         $comments = $commentManager->readAll();
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-comments.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/edit-comments.php', [
             $comments
         ]);
     }
@@ -146,7 +146,7 @@ class AdminController extends Controller
         $commentManager = new CommentManager();
         $comment = $commentManager->read($commentId);
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-comment.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/edit-comment.php', [
             $comment
         ]);
     }
@@ -198,7 +198,7 @@ class AdminController extends Controller
         $reportingManager = new ReportingManager();
         $reportings = $reportingManager->readAllBy($commentId);
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/list-reportings.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/list-reportings.php', [
             $reportings,
             $commentId
         ]);
@@ -228,7 +228,7 @@ class AdminController extends Controller
         $userManager = new UserManager();
         $users = $userManager->readAll();
 
-        $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Admin/edit-user.php', [
+        $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Admin/edit-user.php', [
             $users
         ]);
     }

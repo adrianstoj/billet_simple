@@ -35,7 +35,7 @@ class ChapterController extends Controller
             $commentManager = new CommentManager();
             $comments = $commentManager->readAllBy($chapterId);
 
-            $this->render('/home/adrian/Documents/dev/billet-simple/src/View/Default/chapter.php', [
+            $this->render('/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Default/chapter.php', [
                 $chapterNb,
                 $chapterContent,
                 $comments,
