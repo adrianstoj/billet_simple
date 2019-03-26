@@ -9,7 +9,6 @@
 namespace BilletSimple\Engine\Manager;
 
 use BilletSimple\Model\Chapter;
-use BilletSimple\Engine\Manager;
 use PDO;
 
 class ChapterManager extends Manager
