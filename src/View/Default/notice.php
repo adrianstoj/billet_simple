@@ -22,11 +22,6 @@ require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/la
             <strong>Webmaster</strong> : Adrian Stoj – adrianstoj@gmail.com<br />
             <strong>Hébergeur</strong> : 1and1 – INTERGEST SA 7 PLACE DE LA GARE 57200 SARREGUEMINES<br />
             Crédits : <br />
-            Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank" href="https://www.subdelirium.com/generateur-de-mentions-legales/" alt="Modèle de mentions légales">Modèle de mentions légales</a></p>
-
-<<<<<<< HEAD
-<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>
-=======
         <h3>2. Conditions générales d’utilisation du site et des services proposés.</h3>
         <p>L’utilisation du site <a href="http://billet-simple.stoj.fr/">billet-simple.stoj.fr</a> implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site <a href="http://billet-simple.stoj.fr/">billet-simple.stoj.fr</a> sont donc invités à les consulter de manière régulière.</p>
         <p>Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Jean Forteroche, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.</p>
@@ -73,5 +68,4 @@ require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/la
         <p>Utilisateur : Internaute se connectant, utilisant le site susnommé.</p>
         <p>Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).</p>
     </div>
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
->>>>>>> dev/global
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/footer.php'; ?>
