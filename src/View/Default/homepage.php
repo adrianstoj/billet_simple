@@ -17,10 +17,8 @@ require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/la
 <a href="#home-container-intro"><i id="home-down" class="glyphicon glyphicon-chevron-down"></i></a>
 
 <div id="home-container-intro">
-    <h4 id="home-h4">À mon ami Lorem Ipsum,</h4>
-    <p id="home-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in dui molestie, volutpat nulla at, varius nulla. Etiam nec iaculis elit. Nunc pulvinar, enim vel tempus condimentum, velit enim laoreet lectus, et mattis lectus urna eget felis. Curabitur id est venenatis, maximus sapien eu, accumsan eros. Donec sed efficitur nisi. Ut ipsum sem, rhoncus at consequat id, scelerisque quis sapien. Integer tempus libero consequat felis fringilla feugiat.
-    </br></br>
-    Sed quis velit vel lectus efficitur lacinia eget hendrerit risus. Vivamus at pharetra massa, id lobortis tortor. Suspendisse sit amet arcu eget augue consectetur porta at ut dolor. Ut mollis odio id varius ornare. Mauris feugiat luctus ligula quis cursus. Etiam vel ex a libero tincidunt blandit a id orci. Vivamus sit amet blandit eros. In sed nibh eu orci vestibulum blandit non vitae tellus. Vestibulum blandit volutpat purus nec sollicitudin. Fusce ut urna lectus. Morbi volutpat a risus in volutpat. Ut dignissim, leo vitae fringilla egestas, odio massa posuere ante, vel egestas eros felis at dolor. Ut sed tellus magna. Duis mattis dolor in nulla imperdiet malesuada.</p>
+    <h4 id="home-h4">À mon ami Henry,</h4>
+    <p id="home-p">Les côtes derrière lesquelles s'étendent les parages explorés, pour la première fois suivant toute apparence, par le célèbre Juneau, avaient dès long-temps été reconnues, et la tradition a conservé la mémoire d'établissements fort anciens en quelques parties de ce vaste littoral qui s'étend, vis-à-vis de l'Amérique, depuis les abords de la zone torride jusqu'aux froides régions arctiques.
 </div>
 <div id="home-container-links">
     <h4 class="home-h4-link"><a href="/chapitre-1-1"><i class="glyphicon glyphicon-chevron-right"></i>COMMENCER LA LECTURE<i class="glyphicon glyphicon-chevron-left"></i></a></h4>

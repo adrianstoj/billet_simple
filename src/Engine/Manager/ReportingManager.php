@@ -11,8 +11,17 @@ namespace BilletSimple\Engine\Manager;
 use PDO;
 use BilletSimple\Model\Reporting;
 
-class ReportingManager extends Manager
+class ReportingManager
 {
+    private $pdo;
+
+    private $pdoStatement;
+
+    public function __construct()
+    {
+        $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
+    }
+
     public function create(Reporting $reporting)
     {
         $this->pdoStatement = $this->pdo->prepare('INSERT INTO reportings (id, comment_id) VALUES (NULL, :comment_id)');

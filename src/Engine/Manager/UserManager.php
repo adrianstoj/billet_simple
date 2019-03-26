@@ -11,8 +11,17 @@ namespace BilletSimple\Engine\Manager;
 use PDO;
 use BilletSimple\Model\User;
 
-class UserManager extends Manager
+class UserManager
 {
+    private $pdo;
+
+    private $pdoStatement;
+
+    public function __construct()
+    {
+        $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
+    }
+
     public function create(User $user)
     {
         $this->pdoStatement = $this->pdo->prepare('INSERT INTO users (id, login, password, role_id) VALUES (NULL, :login, :password, :role_id)');
