@@ -11,8 +11,17 @@ namespace BilletSimple\Engine\Manager;
 use PDO;
 use BilletSimple\Model\Comment;
 
-class CommentManager extends Manager
+class CommentManager
 {
+    private $pdo;
+
+    private $pdoStatement;
+
+    public function __construct()
+    {
+        $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
+    }
+
     public function create(Comment $comment)
     {
         $this->pdoStatement = $this->pdo->prepare('INSERT INTO comments (id, author, title, content, comment_date, chapter_id, chapter_number, reported) VALUES (NULL, :author, :title, :content, :comment_date, :chapter_id, :chapter_number, :reported)');

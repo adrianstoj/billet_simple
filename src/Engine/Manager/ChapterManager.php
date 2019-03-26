@@ -8,11 +8,21 @@
 
 namespace BilletSimple\Engine\Manager;
 
-use BilletSimple\Model\Chapter;
-use PDO;
 
-class ChapterManager extends Manager
+use PDO;
+use BilletSimple\Model\Chapter;
+
+class ChapterManager
 {
+    private $pdo;
+
+    private $pdoStatement;
+
+    public function __construct()
+    {
+        $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
+    }
+
     public function create(Chapter $chapter)
     {
         $this->pdoStatement = $this->pdo->prepare('INSERT INTO chapters (id, number, title, content, slug, date) VALUES (NULL, :number, :title, :content, :slug, :date)');
