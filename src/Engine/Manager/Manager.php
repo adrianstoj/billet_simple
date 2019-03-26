@@ -6,17 +6,19 @@
  * Time: 16:26
  */
 
-namespace BilletSimple\Engine;
+namespace BilletSimple\Engine\Manager;
 
+use PDO;
 
+include ('../app/parameters.php');
 abstract class Manager
 {
-    private $pdo;
+    protected $pdo;
 
-    private $pdoStatement;
+    protected $pdoStatement;
 
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:host=localhost;dbname=billet_simple', 'root', 'testsql');
+        $this->pdo = new PDO('mysql:host='. DB_HOST. ';dbname='. DB_NAME, DB_USER, DB_PASSWORD);
     }
 }
