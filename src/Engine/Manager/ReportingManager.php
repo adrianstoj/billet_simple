@@ -74,5 +74,10 @@ class ReportingManager extends Manager
         $this->pdoStatement = $this->pdo->prepare('DELETE FROM reportings WHERE reportings.id = :id');
         $this->pdoStatement->bindValue(':id', $reporting->getId(), PDO::PARAM_INT);
         $this->pdoStatement->execute();
+
+        $this->pdoStatement = $this->pdo->prepare('UPDATE comments SET reported = :reported WHERE comments.id = :comments_id');
+        $this->pdoStatement->bindValue(':comments_id', $reporting->getCommentId(), PDO::PARAM_INT);
+        $this->pdoStatement->bindValue(':reported', 1, PDO::PARAM_INT);
+        $this->pdoStatement->execute();
     }
 }

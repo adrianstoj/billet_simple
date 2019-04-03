@@ -10,7 +10,6 @@ namespace BilletSimple\Controller;
 
 
 use BilletSimple\Engine\Manager\ChapterManager;
-use BilletSimple\Model\Chapter;
 use BilletSimple\Engine\Controller;
 
 class HomeController extends Controller

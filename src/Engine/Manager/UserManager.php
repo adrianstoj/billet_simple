@@ -57,11 +57,6 @@ class UserManager extends Manager
         return $users;
     }
 
-    public function update(User $user)
-    {
-
-    }
-
     public function delete(User $user)
     {
         $this->pdoStatement = $this->pdo->prepare('DELETE FROM users WHERE users.id = :id');
