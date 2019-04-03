@@ -4,26 +4,9 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
+class ComposerStaticInit27b64cffcccc1e2cf3def7e814389630
 {
-    public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Php72\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Component\\VarDumper\\' => 28,
-            'Symfony\\Component\\Debug\\' => 24,
-        ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-        ),
         'B' => 
         array (
             'BilletSimple\\' => 13,
@@ -31,26 +14,6 @@ class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php72\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
-        ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Component\\VarDumper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
         'BilletSimple\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -60,8 +23,8 @@ class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite2e22b8d3831bc2163f1261c5e114433::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite2e22b8d3831bc2163f1261c5e114433::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit27b64cffcccc1e2cf3def7e814389630::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit27b64cffcccc1e2cf3def7e814389630::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

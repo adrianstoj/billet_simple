@@ -214,6 +214,7 @@ class AdminController extends Controller
 
         $reporting = new Reporting();
         $reporting->setId($reportingId);
+        $reporting->setCommentId($commentId);
 
         $commentManager = new ReportingManager();
         $commentManager->delete($reporting);

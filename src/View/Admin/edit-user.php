@@ -51,7 +51,7 @@ require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/la
             <th scope="col">#</th>
             <th scope="col">Pseudonyme</th>
             <th scope="col">Role</th>
-            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
         </tr>
         </thead>
         <tbody>
@@ -64,7 +64,7 @@ require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/la
                 '<th scope="row">'. $user->getId().'</th>'.
                 '<th scope="row">'. $user->getLogin().'</th>'.
                 '<th scope="row">'. $role. '</th>'.
-                '<td><button class="btn btn-primary">Modifier</button><form action="/admin/supprimer-utilisateur-'. $user->getId().'" method="post"><button class="btn btn-danger" type="submit" name="delete" value="'. $user->getId().'">Supprimer</button></form></td>'.
+                '<td><form action="/admin/supprimer-utilisateur-'. $user->getId().'" method="post"><button class="btn btn-danger" type="submit" name="delete" value="'. $user->getId().'">Supprimer</button></form></td>'.
                 '</tr>');
         }
 //        ?>
