@@ -235,7 +235,14 @@ $routes->add(
         '[0-9]+',
         ['_controller' => 'AdminController'],
         'deleteUser'));
-
+$routes->add(
+    'postMail',
+     new Route('postMail',
+        '/postMail',
+        'POST',
+        '',
+        ['_controller' => 'ContactController'],
+        'post'));
 
 $router = new Router($routes);
 
