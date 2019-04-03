@@ -4,47 +4,9 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
+class ComposerStaticInit27b64cffcccc1e2cf3def7e814389630
 {
-    public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        'S' => 
-        array (
-            'Symfony\\Polyfill\\Php72\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
-            'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Contracts\\' => 18,
-            'Symfony\\Component\\VarDumper\\' => 28,
-            'Symfony\\Component\\Process\\' => 26,
-            'Symfony\\Component\\Finder\\' => 25,
-            'Symfony\\Component\\Filesystem\\' => 29,
-            'Symfony\\Component\\Debug\\' => 24,
-            'Symfony\\Component\\Console\\' => 26,
-            'Seld\\PharUtils\\' => 15,
-            'Seld\\JsonLint\\' => 14,
-        ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-        ),
-        'J' => 
-        array (
-            'JsonSchema\\' => 11,
-        ),
-        'C' => 
-        array (
-            'Composer\\XdebugHandler\\' => 23,
-            'Composer\\Spdx\\' => 14,
-            'Composer\\Semver\\' => 16,
-            'Composer\\CaBundle\\' => 18,
-            'Composer\\' => 9,
-        ),
         'B' => 
         array (
             'BilletSimple\\' => 13,
@@ -52,82 +14,6 @@ class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php72\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
-        ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
-        'Symfony\\Polyfill\\Ctype\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
-        ),
-        'Symfony\\Contracts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/contracts',
-        ),
-        'Symfony\\Component\\VarDumper\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/var-dumper',
-        ),
-        'Symfony\\Component\\Process\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/process',
-        ),
-        'Symfony\\Component\\Finder\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/finder',
-        ),
-        'Symfony\\Component\\Filesystem\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/filesystem',
-        ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
-        ),
-        'Symfony\\Component\\Console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/console',
-        ),
-        'Seld\\PharUtils\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/seld/phar-utils/src',
-        ),
-        'Seld\\JsonLint\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'JsonSchema\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
-        ),
-        'Composer\\XdebugHandler\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
-        ),
-        'Composer\\Spdx\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/spdx-licenses/src',
-        ),
-        'Composer\\Semver\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/semver/src',
-        ),
-        'Composer\\CaBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
-        ),
-        'Composer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
-        ),
         'BilletSimple\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
@@ -137,8 +23,8 @@ class ComposerStaticInite2e22b8d3831bc2163f1261c5e114433
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite2e22b8d3831bc2163f1261c5e114433::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite2e22b8d3831bc2163f1261c5e114433::$prefixDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit27b64cffcccc1e2cf3def7e814389630::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit27b64cffcccc1e2cf3def7e814389630::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
