@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "289fd73e6843ab832061c019daaa0bb8",
+    "content-hash": "3519681c006ab69cc01c6d446dafec27",
     "packages": [
         {
             "name": "psr/log",
@@ -108,7 +108,9 @@
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
             "time": "2019-03-03T18:11:24+00:00"
-        },
+        }
+    ],
+    "packages-dev": [
         {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.10.0",
@@ -225,7 +227,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -300,7 +302,6 @@
             "time": "2019-02-23T15:17:42+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
