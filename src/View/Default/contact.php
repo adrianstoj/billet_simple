@@ -7,7 +7,7 @@
  */
 session_start();
 $pageTitle = 'Contactez Jean Forteroche';
-require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?>
+require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php'; ?>
 <?php if(isset($_SESSION['success'])) { ?>
     <div class="alert alert-success" role="alert">
         <?php echo($_SESSION['success']);
@@ -26,4 +26,4 @@ require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/layout.php'; ?
         </div>
     </div>
 
-<?php require '/home/adrian/Documents/dev/billet-simple/src/View/Layout/footer.php'; ?>
+<?php require '/kunden/homepages/26/d731598736/htdocs/billet_simple/src/View/Layout/layout.php'; ?>
